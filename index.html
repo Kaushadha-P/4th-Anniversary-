@@ -1,185 +1,1893 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 4 Months!</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
-<style>
-  body { 
-    margin: 0; 
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 100%); 
-    font-family: 'Lora', serif; 
-    overflow-x: hidden;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    color: #fff;
-  }
+    <meta charset="UTF-8">
 
-  /* Header & Main Note */
-  .header-container { text-align: center; margin-bottom: 30px; }
-  .header-container h1 {
-    font-family: 'Dancing Script', cursive; font-size: 3.5rem;
-    color: #ffb6c1; margin: 0 0 10px 0;
-    text-shadow: 0px 4px 15px rgba(255, 182, 193, 0.4);
-  }
-  .header-container h2 {
-    font-size: 1.2rem; font-weight: 400; letter-spacing: 2px;
-    text-transform: uppercase; color: #e0e0e0; margin: 0;
-  }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  .note-container {
-    max-width: 600px; background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px); border: 1px solid rgba(255, 182, 193, 0.2);
-    border-radius: 15px; padding: 30px; text-align: center;
-    line-height: 1.8; margin-bottom: 60px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  }
-  .note-container p { margin: 0; font-size: 1.1rem; font-style: italic; color: #f8f8f8; }
+    <title>Happy 4 Months, My Love ❤️</title>
 
-  /* 3D Carousel (Updated for 7 Images) */
-  .scene { 
-    width: 200px; height: 300px; perspective: 1000px; margin-top: 20px;
-  }
-  .carousel { 
-    width: 100%; height: 100%; position: relative; 
-    transform-style: preserve-3d; 
-    animation: rotate 60s infinite linear; 
-    will-change: transform;
-  }
-  
-  /* Pause the spinning when hovering so it's easier to click */
-  .carousel:hover { animation-play-state: paused; }
 
-  .carousel__cell { 
-    position: absolute; width: 200px; height: 300px; left: 0; top: 0; 
-    border: 2px solid #ffb6c1; border-radius: 10px; overflow: hidden; 
-    box-shadow: 0px 0px 25px rgba(255, 182, 193, 0.3);
-    cursor: pointer; transition: transform 0.3s, border-color 0.3s;
-  }
-  .carousel__cell:hover { border-color: #fff; }
-  .carousel__cell img { width: 100%; height: 100%; object-fit: cover; }
-  
-  /* Math adjusted for exactly 7 images (360 degrees / 7 = ~51.4 degrees) */
-  .carousel__cell:nth-child(1) { transform: rotateY(0deg) translateZ(260px); }
-  .carousel__cell:nth-child(2) { transform: rotateY(51.4deg) translateZ(260px); }
-  .carousel__cell:nth-child(3) { transform: rotateY(102.9deg) translateZ(260px); }
-  .carousel__cell:nth-child(4) { transform: rotateY(154.3deg) translateZ(260px); }
-  .carousel__cell:nth-child(5) { transform: rotateY(205.7deg) translateZ(260px); }
-  .carousel__cell:nth-child(6) { transform: rotateY(257.1deg) translateZ(260px); }
-  .carousel__cell:nth-child(7) { transform: rotateY(308.6deg) translateZ(260px); }
-  
-  @keyframes rotate { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    <style>
 
-  /* Story Pop-up (Modal) Styling */
-  .modal-overlay {
-    display: none; position: fixed; z-index: 100; left: 0; top: 0; 
-    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px); justify-content: center; align-items: center;
-    padding: 20px; box-sizing: border-box;
-  }
-  .modal-content {
-    background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 182, 193, 0.4);
-    border-radius: 15px; padding: 20px; max-width: 400px; width: 100%;
-    text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  }
-  .modal-content img {
-    width: 100%; max-height: 400px; object-fit: contain; 
-    border-radius: 10px; margin-bottom: 15px;
-  }
-  .modal-content p { font-size: 1.1rem; color: #fff; line-height: 1.6; font-style: italic; }
-  .close-btn {
-    position: absolute; top: 10px; right: 20px; color: #ffb6c1; 
-    font-size: 30px; font-weight: bold; cursor: pointer;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  @media (max-width: 600px) {
-    .header-container h1 { font-size: 2.8rem; }
-    .carousel__cell:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }
-    .carousel__cell:nth-child(2) { transform: rotateY(51.4deg) translateZ(220px); }
-    .carousel__cell:nth-child(3) { transform: rotateY(102.9deg) translateZ(220px); }
-    .carousel__cell:nth-child(4) { transform: rotateY(154.3deg) translateZ(220px); }
-    .carousel__cell:nth-child(5) { transform: rotateY(205.7deg) translateZ(220px); }
-    .carousel__cell:nth-child(6) { transform: rotateY(257.1deg) translateZ(220px); }
-    .carousel__cell:nth-child(7) { transform: rotateY(308.6deg) translateZ(220px); }
-  }
-</style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080308;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 10%,
+                    rgba(130, 20, 60, 0.45),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(255, 50, 110, 0.12),
+                    transparent 30%
+                );
+
+            pointer-events: none;
+
+            z-index: -3;
+        }
+
+
+
+        .stars {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -1;
+
+            pointer-events: none;
+        }
+
+
+        .star {
+
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            animation:
+                twinkle
+                3s
+                infinite
+                ease-in-out;
+        }
+
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+
+                opacity: .2;
+
+                transform:
+                    scale(.7);
+            }
+
+            50% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1.3);
+            }
+        }
+
+
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            perspective: 1200px;
+        }
+
+
+        .hero-content {
+
+            max-width: 900px;
+
+            animation:
+                floating
+                6s
+                ease-in-out
+                infinite;
+
+            transition:
+                transform .2s ease;
+        }
+
+
+        .small-title {
+
+            text-transform: uppercase;
+
+            letter-spacing: 6px;
+
+            color: #f3c7d2;
+
+            font-size: 12px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero h1 {
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(
+                    60px,
+                    12vw,
+                    150px
+                );
+
+            line-height: .8;
+
+            font-weight: normal;
+
+            text-shadow:
+
+                0 0 20px
+                rgba(255, 90, 140, .4),
+
+                0 20px 60px
+                rgba(0,0,0,.8);
+        }
+
+
+        .hero h1 span {
+
+            display: block;
+
+            font-size: .35em;
+
+            margin-top: 35px;
+
+            letter-spacing: 4px;
+
+            color: #ffdce5;
+        }
+
+
+        .hero p {
+
+            max-width: 600px;
+
+            margin: 45px auto 0;
+
+            line-height: 1.9;
+
+            color: #cdbbc2;
+
+            font-size: 16px;
+        }
+
+
+        .heart {
+
+            color: #ff6f9a;
+
+            display: inline-block;
+
+            animation:
+                heartbeat
+                1.5s
+                infinite;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+
+        .open-button {
+
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 16px 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            background:
+                rgba(255,255,255,.06);
+
+            backdrop-filter:
+                blur(15px);
+
+            transition: .4s;
+        }
+
+
+        .open-button:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+
+            background:
+                rgba(255,80,130,.15);
+
+            border-color:
+                rgba(255,130,160,.6);
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px);
+            }
+        }
+
+
+
+        .letter-section {
+
+            padding:
+                130px
+                20px;
+        }
+
+
+        .section-label {
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            letter-spacing: 5px;
+
+            font-size: 11px;
+
+            color: #e6b6c4;
+
+            margin-bottom: 20px;
+        }
+
+
+        .letter {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 70px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 30px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.025)
+                );
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+
+                0 30px 100px
+                rgba(0,0,0,.5);
+        }
+
+
+        .letter::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: #ff3d75;
+
+            filter: blur(130px);
+
+            opacity: .12;
+
+            top: -150px;
+
+            right: -100px;
+        }
+
+
+        .letter h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 60px;
+
+            font-weight: normal;
+
+            margin-bottom: 30px;
+        }
+
+
+        .letter p {
+
+            font-family: Georgia, serif;
+
+            font-size: 20px;
+
+            line-height: 2;
+
+            color: #eadde2;
+
+            margin-bottom: 20px;
+        }
+
+
+        .signature {
+
+            color: #ffb4c7 !important;
+
+            margin-top: 35px;
+        }
+
+
+
+        .gallery {
+
+            padding:
+                100px
+                20px
+                160px;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+        }
+
+
+        .gallery h2 {
+
+            text-align: center;
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(
+                    60px,
+                    10vw,
+                    120px
+                );
+
+            font-weight: normal;
+
+            margin-bottom: 10px;
+        }
+
+
+        .gallery-sub {
+
+            text-align: center;
+
+            color: #9f8f96;
+
+            margin-bottom: 30px;
+        }
+
+
+        .carousel-container {
+
+            height: 650px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            perspective: 1400px;
+        }
+
+
+        .carousel {
+
+            width: 240px;
+
+            height: 350px;
+
+            position: relative;
+
+            transform-style:
+                preserve-3d;
+
+            animation:
+                rotateCarousel
+                60s
+                linear
+                infinite;
+        }
+
+
+        .carousel:hover {
+
+            animation-play-state:
+                paused;
+        }
+
+
+        .photo {
+
+            position: absolute;
+
+            width: 240px;
+
+            height: 350px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,.7);
+
+            background: #150a10;
+
+            cursor: pointer;
+
+            transition:
+                filter .3s,
+                box-shadow .3s;
+        }
+
+
+        .photo:hover {
+
+            filter:
+                brightness(1.15);
+
+            box-shadow:
+                0 35px 100px
+                rgba(255,70,120,.25);
+        }
+
+
+        .photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* 3D positions */
+
+        .photo:nth-child(1) {
+
+            transform:
+                rotateY(0deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(2) {
+
+            transform:
+                rotateY(51.4deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(3) {
+
+            transform:
+                rotateY(102.8deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(4) {
+
+            transform:
+                rotateY(154.2deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(5) {
+
+            transform:
+                rotateY(205.6deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(6) {
+
+            transform:
+                rotateY(257deg)
+                translateZ(400px);
+        }
+
+
+        .photo:nth-child(7) {
+
+            transform:
+                rotateY(308.4deg)
+                translateZ(400px);
+        }
+
+
+        @keyframes rotateCarousel {
+
+            from {
+
+                transform:
+                    rotateY(0deg);
+            }
+
+            to {
+
+                transform:
+                    rotateY(360deg);
+            }
+        }
+
+
+        .memory-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 25px;
+
+            background:
+                rgba(0,0,0,.82);
+
+            backdrop-filter:
+                blur(18px);
+
+            z-index: 999;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity .5s ease,
+                visibility .5s ease;
+        }
+
+
+        .memory-overlay.active {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .memory-box {
+
+            width:
+                min(
+                    900px,
+                    95%
+                );
+
+            max-height: 90vh;
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                45% 55%;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(50,15,30,.98),
+                    rgba(12,5,10,.99)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            border-radius: 30px;
+
+            box-shadow:
+
+                0 40px 120px
+                rgba(0,0,0,.8);
+
+            overflow: hidden;
+
+            transform:
+
+                perspective(1000px)
+                rotateX(12deg)
+                scale(.75);
+
+            transition:
+
+                transform .6s
+                cubic-bezier(
+                    .2,
+                    .8,
+                    .2,
+                    1
+                );
+        }
+
+
+        .memory-overlay.active
+        .memory-box {
+
+            transform:
+
+                perspective(1000px)
+                rotateX(0deg)
+                scale(1);
+        }
+
+
+        .memory-box > img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 500px;
+
+            object-fit: cover;
+        }
+
+
+        .memory-content {
+
+            padding:
+                55px 45px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .memory-number {
+
+            color: #e6a9ba;
+
+            letter-spacing: 4px;
+
+            font-size: 10px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .memory-content h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 48px;
+
+            font-weight: normal;
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            color: #ffe5eb;
+        }
+
+
+        .memory-content p {
+
+            font-family: Georgia, serif;
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            color: #d8c7ce;
+        }
+
+
+
+        .memory-close {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 18px;
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            background:
+                rgba(0,0,0,.5);
+
+            color: white;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+            z-index: 5;
+
+            transition: .3s;
+        }
+
+
+        .memory-close:hover {
+
+            background:
+                rgba(255,70,120,.3);
+
+            transform:
+                rotate(90deg);
+        }
+
+
+        .final {
+
+            min-height: 90vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px;
+        }
+
+
+        .final-content {
+
+            max-width: 800px;
+        }
+
+
+        .final-small {
+
+            text-transform: uppercase;
+
+            letter-spacing: 5px;
+
+            color: #d6adb9;
+
+            font-size: 11px;
+        }
+
+
+        .final h2 {
+
+            font-family: Georgia, serif;
+
+            font-weight: normal;
+
+            font-size:
+                clamp(
+                    60px,
+                    11vw,
+                    130px
+                );
+
+            line-height: .8;
+
+            margin:
+                35px 0;
+        }
+
+
+        .final p {
+
+            color: #bdaeb4;
+
+            line-height: 1.9;
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #62545a;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+        }
+
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -30px;
+
+            color: #ff668f;
+
+            font-size: 18px;
+
+            pointer-events: none;
+
+            animation:
+                rise
+                7s
+                linear
+                forwards;
+
+            z-index: 10;
+        }
+
+
+        @keyframes rise {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+
+                opacity: .8;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        @media(max-width: 700px) {
+
+            .letter {
+
+                padding:
+                    40px 25px;
+            }
+
+
+            .letter h2 {
+
+                font-size: 48px;
+            }
+
+
+            .letter p {
+
+                font-size: 18px;
+            }
+
+
+            .carousel {
+
+                width: 190px;
+
+                height: 280px;
+            }
+
+
+            .photo {
+
+                width: 190px;
+
+                height: 280px;
+            }
+
+
+            .photo:nth-child(1) {
+
+                transform:
+                    rotateY(0deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(2) {
+
+                transform:
+                    rotateY(51.4deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(3) {
+
+                transform:
+                    rotateY(102.8deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(4) {
+
+                transform:
+                    rotateY(154.2deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(5) {
+
+                transform:
+                    rotateY(205.6deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(6) {
+
+                transform:
+                    rotateY(257deg)
+                    translateZ(300px);
+            }
+
+
+            .photo:nth-child(7) {
+
+                transform:
+                    rotateY(308.4deg)
+                    translateZ(300px);
+            }
+
+
+            /* MOBILE MEMORY */
+
+            .memory-box {
+
+                grid-template-columns: 1fr;
+
+                max-height: 90vh;
+
+                overflow-y: auto;
+            }
+
+
+            .memory-box > img {
+
+                height: 330px;
+
+                min-height: 330px;
+            }
+
+
+            .memory-content {
+
+                padding:
+                    35px
+                    25px
+                    45px;
+            }
+
+
+            .memory-content h2 {
+
+                font-size: 38px;
+            }
+
+
+            .memory-content p {
+
+                font-size: 17px;
+            }
+
+        }
+
+
+    </style>
+
 </head>
+
+
 <body>
 
-  <!-- Header -->
-  <div class="header-container">
-    <h1>Four Beautiful Months</h1>
-    <h2>Happy Anniversary My Love</h2>
-  </div>
 
-  <!-- Intro Note -->
-  <div class="note-container">
-    <p>
-     Every single day with you feels like a dream I never want to wake up from. These past four months have been the most incredible journey, filled with laughter, warmth, and a love that grows deeper with every passing moment. I can't wait for all the beautiful memories we have yet to make. You mean the world to me.
-    </p>
-  </div>
+    <div class="stars">
 
-  <!-- 3D Carousel (Clickable) -->
-  <div class="scene">
-    <div class="carousel">
-      <!-- Notice the onclick attribute passes a number to Javascript (0 to 6) -->
-      <div class="carousel__cell" onclick="openStory(0)"><img src="https://files.catbox.moe/othxzu.heic" alt="Memory 1"></div> 
-      <div class="carousel__cell" onclick="openStory(1)"><img src="https://files.catbox.moe/sult6q.heic" alt="Memory 2"></div> 
-      <div class="carousel__cell" onclick="openStory(2)"><img src="https://files.catbox.moe/b6mkd9.heic" alt="Memory 3"></div> 
-      <div class="carousel__cell" onclick="openStory(3)"><img src="https://files.catbox.moe/x3kqdj.HEIC" alt="Memory 4"></div> 
-      <div class="carousel__cell" onclick="openStory(4)"><img src="https://files.catbox.moe/m8rzdc.HEIC" alt="Memory 5"></div> 
-      <div class="carousel__cell" onclick="openStory(5)"><img src="https://files.catbox.moe/07gvea.HEIC" alt="Memory 6"></div> 
-      <div class="carousel__cell" onclick="openStory(6)"><img src="https://files.catbox.moe/6e030q.HEIC" alt="Memory 7"></div>
+        <span
+            class="star"
+            style="left:10%;top:20%;animation-delay:.2s">
+        </span>
+
+        <span
+            class="star"
+            style="left:25%;top:70%;animation-delay:1s">
+        </span>
+
+        <span
+            class="star"
+            style="left:40%;top:30%;animation-delay:1.5s">
+        </span>
+
+        <span
+            class="star"
+            style="left:55%;top:80%;animation-delay:.7s">
+        </span>
+
+        <span
+            class="star"
+            style="left:70%;top:20%;animation-delay:2s">
+        </span>
+
+        <span
+            class="star"
+            style="left:85%;top:60%;animation-delay:.4s">
+        </span>
+
+        <span
+            class="star"
+            style="left:92%;top:15%;animation-delay:1.2s">
+        </span>
+
     </div>
-  </div>
 
-  <!-- The Pop-up (Modal) for the stories -->
-  <div id="storyOverlay" class="modal-overlay" onclick="closeStory(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeStory()">&times;</span>
-      <img id="popupImg" src="" alt="Popup Memory">
-      <p id="popupText"></p>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+
+                A little piece of my heart ·
+                4 months
+
+            </div>
+
+
+            <h1>
+
+                Happy
+                <br>
+                Anniversary
+
+                <span>
+
+                    My Love
+
+                    <i class="heart">
+                        ♥
+                    </i>
+
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Four months of us.
+                Four months of memories,
+                laughter, little moments,
+                and a thousand reasons
+                to smile whenever I think of you.
+
+            </p>
+
+
+            <a
+                href="#letter"
+                class="open-button">
+
+                Open Our Story ↓
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section
+        class="letter-section"
+        id="letter">
+
+        <div class="section-label">
+
+            A letter for you
+
+        </div>
+
+
+        <div class="letter">
+
+            <h2>
+
+                My love,
+
+            </h2>
+
+
+            <p>
+
+                Four months might sound like
+                just a number, but to me,
+                it holds so many little moments —
+                the laughs, the conversations,
+                the silly things, the quiet moments,
+                and all those times you made
+                an ordinary day feel a little
+                more special.
+
+            </p>
+
+
+            <p>
+
+                Somehow, in these four months,
+                you've become part of the way
+                I see my days.
+
+                And if I could choose again,
+                I'd still choose every laugh,
+                every memory and every moment
+                that brought us here.
+
+            </p>
+
+
+            <p>
+
+                I don't know exactly what every
+                chapter of our story will look like,
+                but I know I want to keep making
+                beautiful memories with you,
+                one day at a time.
+
+            </p>
+
+
+            <p class="signature">
+
+                Happy four months, my love.
+
+                Here's to us —
+                and to all the moments
+                still waiting for us. ❤️
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="gallery">
+
+        <div class="section-label">
+
+            Our little universe
+
+        </div>
+
+
+        <h2>
+
+            Just Us.
+
+        </h2>
+
+
+        <p class="gallery-sub">
+
+            Click a photo.
+            I have a little story for each one. ❤️
+
+        </p>
+
+
+        <div class="carousel-container">
+
+            <div class="carousel">
+
+
+                <div
+                    class="photo"
+                    data-memory="0">
+
+                    <img src="https://files.catbox.moe/othxzu.heic"
+                        alt="Our memory 1">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="1">
+
+                    <img src="https://files.catbox.moe/sult6q.heic"
+                        alt="Our memory 2">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="2">
+
+                    <img src="https://files.catbox.moe/x3kqdj.HEIC"
+                        alt="Our memory 3">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="3">
+
+                    <img src="https://files.catbox.moe/b6mkd9.heic"
+                        alt="Our memory 4">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="4">
+
+                    <img src="https://files.catbox.moe/07gvea.HEIC"
+                        alt="Our memory 5">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="5">
+
+                    <img src="https://files.catbox.moe/6e030q.HEIC"
+                        alt="Our memory 6">
+
+                </div>
+
+
+                <div
+                    class="photo"
+                    data-memory="6">
+
+                    <img src="https://files.catbox.moe/m8rzdc.HEIC"
+                        alt="Our memory 7">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div
+        class="memory-overlay"
+        id="memoryOverlay">
+
+
+        <div class="memory-box">
+
+
+            <button
+                class="memory-close"
+                id="memoryClose"
+                aria-label="Close memory">
+
+                ×
+
+            </button>
+
+
+            <img
+                id="memoryImage"
+                src=""
+                alt="Selected memory">
+
+
+            <div class="memory-content">
+
+
+                <div
+                    class="memory-number"
+                    id="memoryNumber">
+
+                    MEMORY 01
+
+                </div>
+
+
+                <h2
+                    id="memoryTitle">
+
+                    Our Memory
+
+                </h2>
+
+
+                <p
+                    id="memoryStory">
+
+                    Our story goes here.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
     </div>
-  </div>
 
-  <!-- Javascript to handle the clicking and stories -->
-  <script>
-    // These are the stories tied to each specific image! 
-    // You can edit the text inside the quotation marks below to make it your own.
-    const memoryData = [
-      { img: "IMG_0924.jpg", story: "Our lovely day out at Thewatta Church. Your smile here is my absolute favorite thing in the world." },
-      { img: "IMG_1171.jpg", story: “Kelly Felder fitting room fun! Even when we're just running errands, being with you makes it the perfect date." },
-      { img: "IMG_1266.jpg", story: "Hiding from the scorching sun under the red umbrella at Wallawatte beach. I'd weather any storm as long as I'm beside you." },
-      { img: "IMG_1468.jpg", story: "A steamy, hidden moment just for us at Best Western. The connection we share is undeniable." },
-      { img: "IMG_9890.jpg", story: "Holding you close. Every time you wrap your arms around me, I feel completely at home." },
-      { img: "IMG_1196.jpg", story: "Just lounging and being silly together at ALL Star. These quiet, upside down moments are everything to me." },
-      { img: "IMG_1026.jpg", story: "Late night fun at BLAC. No matter where we are your eyes light up my whole world." }
-    ];
 
-    const overlay = document.getElementById("storyOverlay");
-    const popupImg = document.getElementById("popupImg");
-    const popupText = document.getElementById("popupText");
+    <section class="final">
 
-    function openStory(index) {
-      popupImg.src = memoryData[index].img;
-      popupText.innerText = memoryData[index].story;
-      overlay.style.display = "flex";
-    }
+        <div class="final-content">
 
-    function closeStory(e) {
-      // Closes the popup if the 'X' is clicked, or if you tap outside the box
-      if (!e || e.target === overlay || e.type === 'click') {
-        overlay.style.display = "none";
-      }
-    }
-  </script>
+
+            <div class="final-small">
+
+                And this is only
+                month four...
+
+            </div>
+
+
+            <h2>
+
+                More Memories.
+                <br>
+
+                More Us.
+
+                <span class="heart">
+                    ♥
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Whatever comes next,
+                I hope we keep finding
+                our way back to each other,
+                laughing at the little things
+                and making moments worth
+                remembering.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        MADE WITH LOVE ·
+        FOR US ·
+        2026
+
+    </footer>
+
+    <script>
+
+
+        const memories = [
+
+
+            {
+                title:
+                    “Day at Thewatta”,
+
+                story:
+                    "This picture will always have a special place in my heart. Our lovely day out at Thewatta Church. Your smile here is my absolute favorite thing in the world."
+            },
+
+
+            {
+                title:
+                    "A Little Closer",
+
+                story:
+                    "There are some moments where you don't really need words. Just being close to you somehow makes everything feel a little quieter and a little better. This is one of those memories I could look at a hundred times and still smile."
+            },
+
+
+            {
+                title:
+                    “Best of the Best ❤️",
+
+                story:
+                    "A steamy, hidden moment just for us at Best Western. The connection we share is undeniable."
+            },
+
+
+            {
+                title:
+                    "Us Being Us",
+
+                story:
+                    "Maybe this doesn't look like some huge movie like moment. But that's exactly why I love it. It's just us, being ourselves and enjoying a moment together. Somehow those ordinary moments have become some of my favorite memories."
+            },
+
+
+            {
+                title:
+                    "A Moment I Keep",
+
+                story:
+                    "Some memories don't need a big story behind them. They just feel special. Whenever I see this photo, I remember how good it felt to have you beside me. These are the moments I want to keep collecting with you."
+            },
+
+
+            {
+                title:
+                    "Right Beside Me",
+
+                story:
+                    "There's something comforting about knowing that the person you care about is right there beside you. This photo reminds me how much I love those simple moments where we don't have to do anything extraordinary. Just being together is enough."
+            },
+
+
+            {
+                title:
+                    "Four Months ❤️",
+
+                story:
+                    "And somehow, here we are. Four months of memories, laughs, conversations, silly moments and everything in between. Four months might only be the beginning, but I'm grateful for every single moment that brought us here. Happy four months, my love."
+            }
+
+
+        ];
+
+
+        const photos =
+            document.querySelectorAll(
+                ".photo"
+            );
+
+
+        const overlay =
+            document.getElementById(
+                "memoryOverlay"
+            );
+
+
+        const memoryImage =
+            document.getElementById(
+                "memoryImage"
+            );
+
+
+        const memoryNumber =
+            document.getElementById(
+                "memoryNumber"
+            );
+
+
+        const memoryTitle =
+            document.getElementById(
+                "memoryTitle"
+            );
+
+
+        const memoryStory =
+            document.getElementById(
+                "memoryStory"
+            );
+
+
+        const closeButton =
+            document.getElementById(
+                "memoryClose"
+            );
+
+
+        photos.forEach(
+            function(photo) {
+
+                photo.addEventListener(
+                    "click",
+                    function() {
+
+
+                        const index =
+                            Number(
+                                photo.dataset.memory
+                            );
+
+
+                        const memory =
+                            memories[index];
+
+
+                        const image =
+                            photo.querySelector(
+                                "img"
+                            );
+
+
+                        memoryImage.src =
+                            image.src;
+
+
+                        memoryImage.alt =
+                            image.alt;
+
+
+                        memoryNumber.textContent =
+                            "MEMORY " +
+                            String(
+                                index + 1
+                            ).padStart(
+                                2,
+                                "0"
+                            );
+
+
+                        memoryTitle.textContent =
+                            memory.title;
+
+
+                        memoryStory.textContent =
+                            memory.story;
+
+
+                        overlay.classList.add(
+                            "active"
+                        );
+
+
+                        document.body.style
+                            .overflow =
+                            "hidden";
+
+                    }
+                );
+
+            }
+        );
+
+
+        function closeMemory() {
+
+            overlay.classList.remove(
+                "active"
+            );
+
+
+            document.body.style
+                .overflow =
+                "";
+        }
+
+
+        closeButton.addEventListener(
+            "click",
+            closeMemory
+        );
+
+
+        /* =================================================
+           CLICK OUTSIDE
+        ================================================= */
+
+
+        overlay.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target ===
+                    overlay
+                ) {
+
+                    closeMemory();
+
+                }
+
+            }
+        );
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeMemory();
+
+                }
+
+            }
+        );
+
+        function createHeart() {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "floating-heart";
+
+
+            heart.innerHTML =
+                "♥";
+
+
+            heart.style.left =
+                Math.random() *
+                100 +
+                "%";
+
+
+            heart.style.fontSize =
+                (
+                    12 +
+                    Math.random() *
+                    20
+                ) +
+                "px";
+
+
+            heart.style.animationDuration =
+                (
+                    5 +
+                    Math.random() *
+                    5
+                ) +
+                "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function() {
+
+                    heart.remove();
+
+                },
+                10000
+            );
+
+        }
+
+
+        setInterval(
+            createHeart,
+            2000
+        );
+
+        const hero =
+            document.querySelector(
+                ".hero-content"
+            );
+
+
+        document.addEventListener(
+            "mousemove",
+            function(event) {
+
+
+                const x =
+                    (
+                        event.clientX /
+                        window.innerWidth
+                        - .5
+                    ) * 10;
+
+
+                const y =
+                    (
+                        event.clientY /
+                        window.innerHeight
+                        - .5
+                    ) * 10;
+
+
+                hero.style.transform =
+                    `
+                    translateY(-5px)
+                    rotateY(${x}deg)
+                    rotateX(${-y}deg)
+                    `;
+
+            }
+        );
+
+
+        let startX = 0;
+
+
+        const carousel =
+            document.querySelector(
+                ".carousel"
+            );
+
+
+        carousel.addEventListener(
+            "touchstart",
+            function(event) {
+
+                startX =
+                    event.touches[0]
+                        .clientX;
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "touchmove",
+            function(event) {
+
+                const currentX =
+                    event.touches[0]
+                        .clientX;
+
+
+                const difference =
+                    currentX -
+                    startX;
+
+
+                carousel.style
+                    .animationPlayState =
+                    "paused";
+
+
+                carousel.style.transform =
+                    `
+                    rotateY(
+                        ${difference}deg
+                    )
+                    `;
+
+            }
+        );
+
+
+    </script>
+
 
 </body>
+
 </html>
