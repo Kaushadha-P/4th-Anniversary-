@@ -5,1104 +5,1655 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Happy 4 Months, My Love ❤️</title>
 
 
-    <style>
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-        body {
-            background: #080308;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
 
+<style>
 
-        body::before {
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-            content: "";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            position: fixed;
+html {
+    scroll-behavior: smooth;
+}
 
-            inset: 0;
+:root {
 
-            background:
+    --background: #09050a;
 
-                radial-gradient(
-                    circle at 50% 10%,
-                    rgba(130, 20, 60, 0.45),
-                    transparent 35%
-                ),
+    --background-two: #1d0d17;
 
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(255, 50, 110, 0.12),
-                    transparent 30%
-                );
+    --pink: #ffb6c1;
 
-            pointer-events: none;
+    --pink-light: #ffe1e8;
 
-            z-index: -3;
-        }
+    --pink-soft: #e8b6c2;
 
+    --cream: #f4e7e9;
 
+    --muted: #cdbbc2;
 
-        .stars {
+    --border:
+        rgba(255, 182, 193, 0.18);
+}
 
-            position: fixed;
 
-            inset: 0;
+body {
 
-            z-index: -1;
+    min-height: 100vh;
 
-            pointer-events: none;
-        }
+    background:
 
+        radial-gradient(
+            circle at 50% 5%,
+            rgba(125, 26, 65, .42),
+            transparent 32%
+        ),
 
-        .star {
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(255, 70, 120, .11),
+            transparent 30%
+        ),
 
-            position: absolute;
+        linear-gradient(
+            145deg,
+            var(--background),
+            var(--background-two)
+        );
 
-            width: 3px;
-            height: 3px;
+    color: var(--cream);
 
-            background: white;
+    font-family:
+        "Lora",
+        serif;
 
-            border-radius: 50%;
+    overflow-x: hidden;
+}
 
-            animation:
-                twinkle
-                3s
-                infinite
-                ease-in-out;
-        }
 
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
 
-        @keyframes twinkle {
+.background-glow {
 
-            0%,
-            100% {
+    position: fixed;
 
-                opacity: .2;
+    inset: 0;
 
-                transform:
-                    scale(.7);
-            }
+    pointer-events: none;
 
-            50% {
+    z-index: -5;
 
-                opacity: 1;
+    background:
 
-                transform:
-                    scale(1.3);
-            }
-        }
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 182, 193, .06),
+            transparent 25%
+        ),
 
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(255, 120, 150, .05),
+            transparent 25%
+        );
+}
 
 
-        .hero {
+/* =========================================================
+   STARS
+========================================================= */
 
-            min-height: 100vh;
+.stars {
 
-            display: flex;
+    position: fixed;
 
-            justify-content: center;
+    inset: 0;
 
-            align-items: center;
+    z-index: -3;
 
-            text-align: center;
+    pointer-events: none;
+}
 
-            padding: 30px;
 
-            perspective: 1200px;
-        }
+.star {
 
+    position: absolute;
 
-        .hero-content {
+    width: 3px;
 
-            max-width: 900px;
+    height: 3px;
 
-            animation:
-                floating
-                6s
-                ease-in-out
-                infinite;
+    border-radius: 50%;
 
-            transition:
-                transform .2s ease;
-        }
+    background: white;
 
+    opacity: .25;
 
-        .small-title {
+    animation:
+        twinkle
+        3s
+        ease-in-out
+        infinite;
+}
 
-            text-transform: uppercase;
 
-            letter-spacing: 6px;
+@keyframes twinkle {
 
-            color: #f3c7d2;
+    0%,
+    100% {
 
-            font-size: 12px;
+        opacity: .15;
 
-            margin-bottom: 30px;
-        }
+        transform:
+            scale(.7);
+    }
 
+    50% {
 
-        .hero h1 {
+        opacity: .95;
 
-            font-family: Georgia, serif;
+        transform:
+            scale(1.3);
+    }
+}
 
-            font-size:
-                clamp(
-                    60px,
-                    12vw,
-                    150px
-                );
 
-            line-height: .8;
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
 
-            font-weight: normal;
+.floating-hearts {
 
-            text-shadow:
+    position: fixed;
 
-                0 0 20px
-                rgba(255, 90, 140, .4),
+    inset: 0;
 
-                0 20px 60px
-                rgba(0,0,0,.8);
-        }
+    overflow: hidden;
 
+    pointer-events: none;
 
-        .hero h1 span {
+    z-index: 50;
+}
 
-            display: block;
 
-            font-size: .35em;
+.floating-heart {
 
-            margin-top: 35px;
+    position: absolute;
 
-            letter-spacing: 4px;
+    bottom: -35px;
 
-            color: #ffdce5;
-        }
+    color:
+        var(--pink);
 
+    text-shadow:
+        0 0 12px
+        rgba(255,182,193,.55);
 
-        .hero p {
+    animation:
+        riseHeart
+        linear
+        forwards;
 
-            max-width: 600px;
+    opacity: 0;
+}
 
-            margin: 45px auto 0;
 
-            line-height: 1.9;
+@keyframes riseHeart {
 
-            color: #cdbbc2;
+    0% {
 
-            font-size: 16px;
-        }
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            rotate(0deg)
+            scale(.75);
 
+        opacity: 0;
+    }
 
-        .heart {
+    12% {
 
-            color: #ff6f9a;
+        opacity: .8;
+    }
 
-            display: inline-block;
+    88% {
 
-            animation:
-                heartbeat
-                1.5s
-                infinite;
-        }
+        opacity: .45;
+    }
 
+    100% {
 
-        @keyframes heartbeat {
+        transform:
+            translate3d(
+                var(--drift),
+                -115vh,
+                0
+            )
+            rotate(var(--rotation))
+            scale(1.15);
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+        opacity: 0;
+    }
+}
 
-            50% {
-                transform: scale(1.25);
-            }
-        }
 
+/* =========================================================
+   HERO
+========================================================= */
 
-        .open-button {
+.hero {
 
-            display: inline-block;
+    min-height: 100vh;
 
-            margin-top: 40px;
+    display: grid;
 
-            padding: 16px 30px;
+    place-items: center;
 
-            color: white;
+    padding: 40px 20px;
 
-            text-decoration: none;
+    text-align: center;
 
-            border-radius: 50px;
+    perspective: 1200px;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,.2);
 
-            background:
-                rgba(255,255,255,.06);
+.hero-content {
 
-            backdrop-filter:
-                blur(15px);
+    width:
+        min(
+            920px,
+            100%
+        );
 
-            transition: .4s;
-        }
+    transition:
+        transform
+        .25s
+        ease-out;
+}
 
 
-        .open-button:hover {
+.small-title {
 
-            transform:
-                translateY(-5px)
-                scale(1.05);
+    margin-bottom: 24px;
 
-            background:
-                rgba(255,80,130,.15);
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            border-color:
-                rgba(255,130,160,.6);
-        }
+    font-size: 11px;
 
+    font-weight: 500;
 
-        @keyframes floating {
+    text-transform: uppercase;
 
-            0%,
-            100% {
-                transform:
-                    translateY(0);
-            }
+    letter-spacing: 4px;
 
-            50% {
-                transform:
-                    translateY(-12px);
-            }
-        }
+    color:
+        var(--pink-soft);
+}
 
 
+/* =========================================================
+   MAIN ROMANTIC TITLE
+========================================================= */
 
-        .letter-section {
+.hero h1 {
 
-            padding:
-                130px
-                20px;
-        }
+    margin: 0;
 
+    font-family:
+        "Dancing Script",
+        cursive;
 
-        .section-label {
+    font-size:
+        clamp(
+            4.2rem,
+            11vw,
+            9rem
+        );
 
-            text-align: center;
+    font-weight: 700;
 
-            text-transform: uppercase;
+    line-height: .88;
 
-            letter-spacing: 5px;
+    color:
+        var(--pink);
 
-            font-size: 11px;
+    text-shadow:
 
-            color: #e6b6c4;
+        0 4px 16px
+        rgba(255,182,193,.35),
 
-            margin-bottom: 20px;
-        }
+        0 0 40px
+        rgba(255,80,130,.12);
+}
 
 
-        .letter {
+.hero h1 span {
 
-            max-width: 800px;
+    display: block;
 
-            margin: auto;
+    margin-top: 22px;
 
-            padding: 70px;
+    font-family:
+        "Dancing Script",
+        cursive;
 
-            position: relative;
+    font-size: .48em;
 
-            overflow: hidden;
+    font-weight: 500;
 
-            border-radius: 30px;
+    letter-spacing: 1px;
 
-            border:
-                1px solid
-                rgba(255,255,255,.15);
+    color:
+        var(--pink-light);
 
-            background:
+    text-shadow:
+        0 4px 16px
+        rgba(255,182,193,.24);
+}
 
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.09),
-                    rgba(255,255,255,.025)
-                );
 
-            backdrop-filter:
-                blur(20px);
+/* =========================================================
+   HEART
+========================================================= */
 
-            box-shadow:
+.heart {
 
-                0 30px 100px
-                rgba(0,0,0,.5);
-        }
+    display: inline-block;
 
+    color:
+        #ff7197;
 
-        .letter::before {
+    animation:
+        heartbeat
+        1.5s
+        ease-in-out
+        infinite;
+}
 
-            content: "";
 
-            position: absolute;
+@keyframes heartbeat {
 
-            width: 300px;
-            height: 300px;
+    0%,
+    100% {
 
-            background: #ff3d75;
+        transform:
+            scale(1);
+    }
 
-            filter: blur(130px);
+    50% {
 
-            opacity: .12;
+        transform:
+            scale(1.22);
+    }
+}
 
-            top: -150px;
 
-            right: -100px;
-        }
+/* =========================================================
+   HERO PARAGRAPH
+========================================================= */
 
+.hero p {
 
-        .letter h2 {
+    max-width: 650px;
 
-            font-family: Georgia, serif;
+    margin:
+        38px
+        auto
+        0;
 
-            font-size: 60px;
+    font-family:
+        "Lora",
+        serif;
 
-            font-weight: normal;
+    font-size: 17px;
 
-            margin-bottom: 30px;
-        }
+    line-height: 1.95;
 
+    color:
+        var(--muted);
+}
 
-        .letter p {
 
-            font-family: Georgia, serif;
+/* =========================================================
+   BUTTON
+========================================================= */
 
-            font-size: 20px;
+.open-button {
 
-            line-height: 2;
+    display: inline-flex;
 
-            color: #eadde2;
+    align-items: center;
 
-            margin-bottom: 20px;
-        }
+    justify-content: center;
 
+    margin-top: 34px;
 
-        .signature {
+    min-height: 48px;
 
-            color: #ffb4c7 !important;
+    padding:
+        12px
+        24px;
 
-            margin-top: 35px;
-        }
+    border:
+        1px solid
+        rgba(255,182,193,.22);
 
+    border-radius: 999px;
 
+    background:
+        rgba(255,255,255,.05);
 
-        .gallery {
+    color:
+        #fff7f9;
 
-            padding:
-                100px
-                20px
-                160px;
+    text-decoration: none;
 
-            min-height: 100vh;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            overflow: hidden;
-        }
+    font-size: 11px;
 
+    font-weight: 500;
 
-        .gallery h2 {
+    letter-spacing: 1.5px;
 
-            text-align: center;
+    transition:
+        .35s
+        ease;
 
-            font-family: Georgia, serif;
+    backdrop-filter:
+        blur(12px);
+}
 
-            font-size:
-                clamp(
-                    60px,
-                    10vw,
-                    120px
-                );
 
-            font-weight: normal;
+.open-button:hover {
 
-            margin-bottom: 10px;
-        }
+    transform:
+        translateY(-3px)
+        scale(1.03);
 
+    background:
+        rgba(255,126,156,.11);
 
-        .gallery-sub {
+    border-color:
+        rgba(255,182,193,.5);
+}
 
-            text-align: center;
 
-            color: #9f8f96;
+/* =========================================================
+   LETTER
+========================================================= */
 
-            margin-bottom: 30px;
-        }
+.letter-section {
 
+    padding:
+        120px
+        20px;
+}
 
-        .carousel-container {
 
-            height: 650px;
+.section-label {
 
-            display: flex;
+    margin-bottom: 18px;
 
-            justify-content: center;
+    text-align: center;
 
-            align-items: center;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            perspective: 1400px;
-        }
+    font-size: 10px;
 
+    font-weight: 500;
 
-        .carousel {
+    text-transform: uppercase;
 
-            width: 240px;
+    letter-spacing: 4px;
 
-            height: 350px;
+    color:
+        var(--pink-soft);
+}
 
-            position: relative;
 
-            transform-style:
-                preserve-3d;
+.letter {
 
-            animation:
-                rotateCarousel
-                60s
-                linear
-                infinite;
-        }
+    position: relative;
 
+    max-width: 820px;
 
-        .carousel:hover {
+    margin: auto;
 
-            animation-play-state:
-                paused;
-        }
+    padding:
+        clamp(
+            32px,
+            7vw,
+            68px
+        );
 
+    overflow: hidden;
 
-        .photo {
+    border:
+        1px solid
+        var(--border);
 
-            position: absolute;
+    border-radius: 30px;
 
-            width: 240px;
+    background:
 
-            height: 350px;
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
 
-            border-radius: 20px;
+    backdrop-filter:
+        blur(18px);
 
-            overflow: hidden;
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.45);
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,.25);
 
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,.7);
+.letter::before {
 
-            background: #150a10;
+    content: "";
 
-            cursor: pointer;
+    position: absolute;
 
-            transition:
-                filter .3s,
-                box-shadow .3s;
-        }
+    width: 300px;
 
+    height: 300px;
 
-        .photo:hover {
+    top: -150px;
 
-            filter:
-                brightness(1.15);
+    right: -100px;
 
-            box-shadow:
-                0 35px 100px
-                rgba(255,70,120,.25);
-        }
+    background:
+        #ff4a80;
 
+    filter:
+        blur(130px);
 
-        .photo img {
+    opacity: .12;
 
-            width: 100%;
+    pointer-events: none;
+}
 
-            height: 100%;
 
-            object-fit: cover;
-        }
+/* =========================================================
+   LETTER TITLE
+========================================================= */
 
+.letter h2 {
 
-        /* 3D positions */
+    position: relative;
 
-        .photo:nth-child(1) {
+    z-index: 1;
 
-            transform:
-                rotateY(0deg)
-                translateZ(400px);
-        }
+    margin-bottom: 26px;
 
+    font-family:
+        "Dancing Script",
+        cursive;
 
-        .photo:nth-child(2) {
+    font-size:
+        clamp(
+            3.2rem,
+            7vw,
+            5.3rem
+        );
 
-            transform:
-                rotateY(51.4deg)
-                translateZ(400px);
-        }
+    font-weight: 600;
 
+    line-height: 1;
 
-        .photo:nth-child(3) {
+    color:
+        var(--pink);
 
-            transform:
-                rotateY(102.8deg)
-                translateZ(400px);
-        }
+    text-shadow:
+        0 4px 16px
+        rgba(255,182,193,.2);
+}
 
 
-        .photo:nth-child(4) {
+/* =========================================================
+   LETTER TEXT
+========================================================= */
 
-            transform:
-                rotateY(154.2deg)
-                translateZ(400px);
-        }
+.letter p {
 
+    position: relative;
 
-        .photo:nth-child(5) {
+    z-index: 1;
 
-            transform:
-                rotateY(205.6deg)
-                translateZ(400px);
-        }
+    margin-bottom: 18px;
 
+    font-family:
+        "Lora",
+        serif;
 
-        .photo:nth-child(6) {
+    font-size: 18px;
 
-            transform:
-                rotateY(257deg)
-                translateZ(400px);
-        }
+    line-height: 2;
 
+    color:
+        #eadde2;
+}
 
-        .photo:nth-child(7) {
 
-            transform:
-                rotateY(308.4deg)
-                translateZ(400px);
-        }
+/* =========================================================
+   SIGNATURE
+========================================================= */
 
+.signature {
 
-        @keyframes rotateCarousel {
+    margin-top: 28px;
 
-            from {
+    font-family:
+        "Dancing Script",
+        cursive !important;
 
-                transform:
-                    rotateY(0deg);
-            }
+    font-size:
+        1.8rem !important;
 
-            to {
+    line-height:
+        1.5 !important;
 
-                transform:
-                    rotateY(360deg);
-            }
-        }
+    color:
+        var(--pink) !important;
+}
 
 
-        .memory-overlay {
+/* =========================================================
+   GALLERY
+========================================================= */
 
-            position: fixed;
+.gallery {
 
-            inset: 0;
+    padding:
+        100px
+        20px
+        160px;
 
-            display: flex;
+    overflow: hidden;
+}
 
-            justify-content: center;
 
-            align-items: center;
+.gallery h2 {
 
-            padding: 25px;
+    text-align: center;
 
-            background:
-                rgba(0,0,0,.82);
+    font-family:
+        "Dancing Script",
+        cursive;
 
-            backdrop-filter:
-                blur(18px);
+    font-size:
+        clamp(
+            4.2rem,
+            10vw,
+            7.5rem
+        );
 
-            z-index: 999;
+    font-weight: 600;
 
-            opacity: 0;
+    line-height: .9;
 
-            visibility: hidden;
+    color:
+        var(--pink);
 
-            transition:
-                opacity .5s ease,
-                visibility .5s ease;
-        }
+    text-shadow:
+        0 5px 20px
+        rgba(255,182,193,.23);
+}
 
 
-        .memory-overlay.active {
+.gallery-sub {
 
-            opacity: 1;
+    margin-top: 12px;
 
-            visibility: visible;
-        }
+    text-align: center;
 
+    font-family:
+        "Lora",
+        serif;
 
-        .memory-box {
+    font-size: 15px;
 
-            width:
-                min(
-                    900px,
-                    95%
-                );
+    font-style: italic;
 
-            max-height: 90vh;
+    color:
+        #bdaeb5;
+}
 
-            position: relative;
 
-            display: grid;
+/* =========================================================
+   CAROUSEL
+========================================================= */
 
-            grid-template-columns:
-                45% 55%;
+.carousel-container {
 
-            background:
+    height: 650px;
 
-                linear-gradient(
-                    145deg,
-                    rgba(50,15,30,.98),
-                    rgba(12,5,10,.99)
-                );
+    display: grid;
 
-            border:
-                1px solid
-                rgba(255,255,255,.15);
+    place-items: center;
 
-            border-radius: 30px;
+    perspective: 1400px;
+}
 
-            box-shadow:
 
-                0 40px 120px
-                rgba(0,0,0,.8);
+.carousel {
 
-            overflow: hidden;
+    width: 240px;
 
-            transform:
+    height: 350px;
 
-                perspective(1000px)
-                rotateX(12deg)
-                scale(.75);
+    position: relative;
 
-            transition:
+    transform-style:
+        preserve-3d;
 
-                transform .6s
-                cubic-bezier(
-                    .2,
-                    .8,
-                    .2,
-                    1
-                );
-        }
+    animation:
+        rotateCarousel
+        60s
+        linear
+        infinite;
 
+    will-change:
+        transform;
+}
 
-        .memory-overlay.active
-        .memory-box {
 
-            transform:
+.carousel.paused {
 
-                perspective(1000px)
-                rotateX(0deg)
-                scale(1);
-        }
+    animation-play-state:
+        paused;
+}
 
 
-        .memory-box > img {
+.photo {
 
-            width: 100%;
+    position: absolute;
 
-            height: 100%;
+    inset: 0;
 
-            min-height: 500px;
+    width: 240px;
 
-            object-fit: cover;
-        }
+    height: 350px;
 
+    overflow: hidden;
 
-        .memory-content {
+    border:
+        1px solid
+        rgba(255,182,193,.25);
 
-            padding:
-                55px 45px;
+    border-radius: 20px;
 
-            display: flex;
+    background:
+        #150a10;
 
-            flex-direction: column;
+    cursor: pointer;
 
-            justify-content: center;
-        }
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.7);
 
+    transition:
+        filter
+        .3s,
 
-        .memory-number {
+        box-shadow
+        .3s;
+}
 
-            color: #e6a9ba;
 
-            letter-spacing: 4px;
+/* =========================================================
+   CLICK LABEL
+========================================================= */
 
-            font-size: 10px;
+.photo::after {
 
-            margin-bottom: 20px;
-        }
+    content:
+        "♥  CLICK";
 
+    position: absolute;
 
-        .memory-content h2 {
+    left: 50%;
 
-            font-family: Georgia, serif;
+    bottom: 16px;
 
-            font-size: 48px;
+    transform:
+        translateX(-50%);
 
-            font-weight: normal;
+    padding:
+        7px
+        12px;
 
-            line-height: 1;
+    border:
+        1px solid
+        rgba(255,255,255,.18);
 
-            margin-bottom: 25px;
+    border-radius:
+        999px;
 
-            color: #ffe5eb;
-        }
+    background:
+        rgba(0,0,0,.35);
 
+    color:
+        rgba(255,245,248,.88);
 
-        .memory-content p {
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            font-family: Georgia, serif;
+    font-size: 8px;
 
-            font-size: 19px;
+    letter-spacing: 2px;
 
-            line-height: 1.9;
+    opacity: 0;
 
-            color: #d8c7ce;
-        }
+    transition:
+        .3s;
 
+    pointer-events:
+        none;
+}
 
 
-        .memory-close {
+@media
+(hover:hover)
+and
+(pointer:fine) {
 
-            position: absolute;
+    .photo:hover {
 
-            top: 15px;
+        filter:
+            brightness(1.13);
 
-            right: 18px;
+        box-shadow:
+            0 35px 100px
+            rgba(255,70,120,.22);
+    }
 
-            width: 45px;
 
-            height: 45px;
+    .photo:hover::after {
 
-            border-radius: 50%;
+        opacity: 1;
+    }
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,.2);
 
-            background:
-                rgba(0,0,0,.5);
+/* =========================================================
+   PHOTO IMAGE
+========================================================= */
 
-            color: white;
+.photo img {
 
-            font-size: 30px;
+    width: 100%;
 
-            cursor: pointer;
+    height: 100%;
 
-            z-index: 5;
+    display: block;
 
-            transition: .3s;
-        }
+    object-fit: cover;
+}
 
 
-        .memory-close:hover {
+/* =========================================================
+   3D PHOTO POSITIONS
+========================================================= */
 
-            background:
-                rgba(255,70,120,.3);
+.photo:nth-child(1) {
 
-            transform:
-                rotate(90deg);
-        }
+    transform:
+        rotateY(0deg)
+        translateZ(400px);
+}
 
 
-        .final {
+.photo:nth-child(2) {
 
-            min-height: 90vh;
+    transform:
+        rotateY(51.43deg)
+        translateZ(400px);
+}
 
-            display: flex;
 
-            justify-content: center;
+.photo:nth-child(3) {
 
-            align-items: center;
+    transform:
+        rotateY(102.86deg)
+        translateZ(400px);
+}
 
-            text-align: center;
 
-            padding: 40px;
-        }
+.photo:nth-child(4) {
 
+    transform:
+        rotateY(154.29deg)
+        translateZ(400px);
+}
 
-        .final-content {
 
-            max-width: 800px;
-        }
+.photo:nth-child(5) {
 
+    transform:
+        rotateY(205.72deg)
+        translateZ(400px);
+}
 
-        .final-small {
 
-            text-transform: uppercase;
+.photo:nth-child(6) {
 
-            letter-spacing: 5px;
+    transform:
+        rotateY(257.15deg)
+        translateZ(400px);
+}
 
-            color: #d6adb9;
 
-            font-size: 11px;
-        }
+.photo:nth-child(7) {
 
+    transform:
+        rotateY(308.58deg)
+        translateZ(400px);
+}
 
-        .final h2 {
 
-            font-family: Georgia, serif;
+@keyframes rotateCarousel {
 
-            font-weight: normal;
+    from {
 
-            font-size:
-                clamp(
-                    60px,
-                    11vw,
-                    130px
-                );
+        transform:
+            rotateY(0deg);
+    }
 
-            line-height: .8;
+    to {
 
-            margin:
-                35px 0;
-        }
+        transform:
+            rotateY(360deg);
+    }
+}
 
 
-        .final p {
+.carousel-hint {
 
-            color: #bdaeb4;
+    text-align: center;
 
-            line-height: 1.9;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            max-width: 600px;
+    font-size: 9px;
 
-            margin: auto;
-        }
+    letter-spacing: 3px;
 
+    text-transform: uppercase;
 
-        footer {
+    color:
+        #806e77;
+}
 
-            text-align: center;
 
-            padding: 30px;
+/* =========================================================
+   MEMORY POPUP
+========================================================= */
 
-            color: #62545a;
+.memory-overlay {
 
-            font-size: 10px;
+    position: fixed;
 
-            letter-spacing: 4px;
-        }
+    inset: 0;
 
+    display: flex;
 
-        .floating-heart {
+    align-items: center;
 
-            position: fixed;
+    justify-content: center;
 
-            bottom: -30px;
+    padding: 20px;
 
-            color: #ff668f;
+    background:
+        rgba(0,0,0,.84);
 
-            font-size: 18px;
+    backdrop-filter:
+        blur(18px);
 
-            pointer-events: none;
+    z-index: 200;
 
-            animation:
-                rise
-                7s
-                linear
-                forwards;
+    opacity: 0;
 
-            z-index: 10;
-        }
+    visibility:
+        hidden;
 
+    transition:
+        opacity
+        .4s
+        ease,
 
-        @keyframes rise {
+        visibility
+        .4s
+        ease;
+}
 
-            0% {
 
-                transform:
-                    translateY(0)
-                    rotate(0deg);
+.memory-overlay.active {
 
-                opacity: 0;
-            }
+    opacity: 1;
 
-            20% {
+    visibility:
+        visible;
+}
 
-                opacity: .8;
-            }
 
-            100% {
+.memory-box {
 
-                transform:
-                    translateY(-110vh)
-                    rotate(360deg);
+    position: relative;
 
-                opacity: 0;
-            }
-        }
+    width:
+        min(
+            900px,
+            95vw
+        );
 
+    max-height:
+        90vh;
 
-        @media(max-width: 700px) {
+    display: grid;
 
-            .letter {
+    grid-template-columns:
+        45% 55%;
 
-                padding:
-                    40px 25px;
-            }
+    overflow: hidden;
 
+    border:
+        1px solid
+        rgba(255,182,193,.25);
 
-            .letter h2 {
+    border-radius:
+        28px;
 
-                font-size: 48px;
-            }
+    background:
 
+        linear-gradient(
+            145deg,
+            rgba(55,18,34,.98),
+            rgba(12,5,10,.99)
+        );
 
-            .letter p {
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,.85);
 
-                font-size: 18px;
-            }
+    transform:
+        perspective(1000px)
+        rotateX(10deg)
+        scale(.82);
 
+    transition:
+        transform
+        .55s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+}
 
-            .carousel {
 
-                width: 190px;
+.memory-overlay.active
+.memory-box {
 
-                height: 280px;
-            }
+    transform:
+        perspective(1000px)
+        rotateX(0deg)
+        scale(1);
+}
 
 
-            .photo {
+/* =========================================================
+   POPUP PHOTO
+========================================================= */
 
-                width: 190px;
+.memory-box > img {
 
-                height: 280px;
-            }
+    width: 100%;
 
+    height: 100%;
 
-            .photo:nth-child(1) {
+    min-height: 500px;
 
-                transform:
-                    rotateY(0deg)
-                    translateZ(300px);
-            }
+    object-fit: cover;
 
+    background:
+        #150a10;
+}
 
-            .photo:nth-child(2) {
 
-                transform:
-                    rotateY(51.4deg)
-                    translateZ(300px);
-            }
+/* =========================================================
+   POPUP TEXT
+========================================================= */
 
+.memory-content {
 
-            .photo:nth-child(3) {
+    display: flex;
 
-                transform:
-                    rotateY(102.8deg)
-                    translateZ(300px);
-            }
+    flex-direction: column;
 
+    justify-content: center;
 
-            .photo:nth-child(4) {
+    padding:
+        55px
+        45px;
+}
 
-                transform:
-                    rotateY(154.2deg)
-                    translateZ(300px);
-            }
 
+.memory-number {
 
-            .photo:nth-child(5) {
+    margin-bottom: 16px;
 
-                transform:
-                    rotateY(205.6deg)
-                    translateZ(300px);
-            }
+    font-family:
+        "Montserrat",
+        sans-serif;
 
+    font-size: 9px;
 
-            .photo:nth-child(6) {
+    letter-spacing: 4px;
 
-                transform:
-                    rotateY(257deg)
-                    translateZ(300px);
-            }
+    text-transform: uppercase;
 
+    color:
+        #dca8b7;
+}
 
-            .photo:nth-child(7) {
 
-                transform:
-                    rotateY(308.4deg)
-                    translateZ(300px);
-            }
+.memory-content h2 {
 
+    margin-bottom: 22px;
 
-            /* MOBILE MEMORY */
+    font-family:
+        "Dancing Script",
+        cursive;
 
-            .memory-box {
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            4.6rem
+        );
 
-                grid-template-columns: 1fr;
+    font-weight: 600;
 
-                max-height: 90vh;
+    line-height: 1;
 
-                overflow-y: auto;
-            }
+    color:
+        var(--pink);
+}
 
 
-            .memory-box > img {
+.memory-content p {
 
-                height: 330px;
+    font-family:
+        "Lora",
+        serif;
 
-                min-height: 330px;
-            }
+    font-size: 17px;
 
+    line-height: 1.9;
 
-            .memory-content {
+    color:
+        #decfd5;
+}
 
-                padding:
-                    35px
-                    25px
-                    45px;
-            }
 
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
-            .memory-content h2 {
+.memory-close {
 
-                font-size: 38px;
-            }
+    position: absolute;
 
+    top: 14px;
 
-            .memory-content p {
+    right: 14px;
 
-                font-size: 17px;
-            }
+    z-index: 5;
 
-        }
+    width: 44px;
 
+    height: 44px;
 
-    </style>
+    border:
+        1px solid
+        rgba(255,182,193,.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.4);
+
+    color:
+        var(--pink);
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        .3s;
+}
+
+
+.memory-close:hover {
+
+    background:
+        rgba(255,75,120,.18);
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.final {
+
+    min-height: 85vh;
+
+    display: grid;
+
+    place-items: center;
+
+    padding:
+        80px
+        20px;
+
+    text-align:
+        center;
+}
+
+
+.final-content {
+
+    max-width:
+        800px;
+}
+
+
+.final-small {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #d6a8b5;
+}
+
+
+.final h2 {
+
+    margin:
+        28px
+        0;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            4rem,
+            10vw,
+            8.5rem
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        .85;
+
+    color:
+        var(--pink);
+
+    text-shadow:
+        0 5px 25px
+        rgba(255,182,193,.28);
+}
+
+
+.final p {
+
+    max-width:
+        620px;
+
+    margin:
+        auto;
+
+    font-family:
+        "Lora",
+        serif;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.9;
+
+    color:
+        #cdbec5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    color:
+        #62545a;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width:700px) {
+
+    .hero {
+
+        min-height:
+            90vh;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                3.8rem,
+                18vw,
+                6rem
+            );
+    }
+
+
+    .hero h1 span {
+
+        font-size:
+            .52em;
+
+        margin-top:
+            18px;
+    }
+
+
+    .letter-section {
+
+        padding:
+            90px
+            16px;
+    }
+
+
+    .letter {
+
+        padding:
+            35px
+            24px;
+    }
+
+
+    .letter p {
+
+        font-size:
+            17px;
+
+        line-height:
+            1.9;
+    }
+
+
+    .gallery {
+
+        padding-top:
+            70px;
+    }
+
+
+    .carousel-container {
+
+        height:
+            560px;
+    }
+
+
+    .carousel {
+
+        width:
+            190px;
+
+        height:
+            280px;
+    }
+
+
+    .photo {
+
+        width:
+            190px;
+
+        height:
+            280px;
+    }
+
+
+    .photo:nth-child(1) {
+
+        transform:
+            rotateY(0deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(2) {
+
+        transform:
+            rotateY(51.43deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(3) {
+
+        transform:
+            rotateY(102.86deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(4) {
+
+        transform:
+            rotateY(154.29deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(5) {
+
+        transform:
+            rotateY(205.72deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(6) {
+
+        transform:
+            rotateY(257.15deg)
+            translateZ(305px);
+    }
+
+
+    .photo:nth-child(7) {
+
+        transform:
+            rotateY(308.58deg)
+            translateZ(305px);
+    }
+
+
+    .memory-box {
+
+        grid-template-columns:
+            1fr;
+
+        max-height:
+            90vh;
+
+        overflow-y:
+            auto;
+    }
+
+
+    .memory-box > img {
+
+        height:
+            320px;
+
+        min-height:
+            320px;
+    }
+
+
+    .memory-content {
+
+        padding:
+            32px
+            24px
+            42px;
+    }
+
+
+    .memory-content h2 {
+
+        font-size:
+            3.3rem;
+    }
+
+
+    .memory-content p {
+
+        font-size:
+            16px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration:
+            .001ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .001ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -1110,443 +1661,612 @@
 <body>
 
 
-    <div class="stars">
+<!-- ======================================================
+     BACKGROUND
+======================================================= -->
 
-        <span
-            class="star"
-            style="left:10%;top:20%;animation-delay:.2s">
-        </span>
+<div class="background-glow"></div>
 
-        <span
-            class="star"
-            style="left:25%;top:70%;animation-delay:1s">
-        </span>
 
-        <span
-            class="star"
-            style="left:40%;top:30%;animation-delay:1.5s">
-        </span>
+<!-- ======================================================
+     STARS
+======================================================= -->
 
-        <span
-            class="star"
-            style="left:55%;top:80%;animation-delay:.7s">
-        </span>
+<div
+    class="stars"
+    aria-hidden="true"
+>
 
-        <span
-            class="star"
-            style="left:70%;top:20%;animation-delay:2s">
-        </span>
+    <span
+        class="star"
+        style="left:8%;top:18%;animation-delay:.2s">
+    </span>
 
-        <span
-            class="star"
-            style="left:85%;top:60%;animation-delay:.4s">
-        </span>
+    <span
+        class="star"
+        style="left:19%;top:67%;animation-delay:1s">
+    </span>
 
-        <span
-            class="star"
-            style="left:92%;top:15%;animation-delay:1.2s">
-        </span>
+    <span
+        class="star"
+        style="left:34%;top:25%;animation-delay:1.5s">
+    </span>
+
+    <span
+        class="star"
+        style="left:49%;top:79%;animation-delay:.7s">
+    </span>
+
+    <span
+        class="star"
+        style="left:67%;top:15%;animation-delay:2s">
+    </span>
+
+    <span
+        class="star"
+        style="left:82%;top:59%;animation-delay:.4s">
+    </span>
+
+    <span
+        class="star"
+        style="left:93%;top:13%;animation-delay:1.2s">
+    </span>
+
+    <span
+        class="star"
+        style="left:58%;top:42%;animation-delay:1.8s">
+    </span>
+
+    <span
+        class="star"
+        style="left:12%;top:44%;animation-delay:.9s">
+    </span>
+
+</div>
+
+
+<!-- ======================================================
+     FLOATING HEART CONTAINER
+======================================================= -->
+
+<div
+    class="floating-hearts"
+    id="floatingHearts"
+    aria-hidden="true">
+</div>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+    <div
+        class="hero-content"
+        id="heroContent"
+    >
+
+        <div class="small-title">
+
+            A little piece of my heart ·
+            4 months
+
+        </div>
+
+
+        <h1>
+
+            Happy
+            <br>
+
+            Anniversary
+
+
+            <span>
+
+                My Love
+
+                <i class="heart">
+
+                    ♥
+
+                </i>
+
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Four months of us.
+            Four months of memories,
+            laughter, little moments,
+            and a thousand reasons
+            to smile whenever I think of you.
+
+        </p>
+
+
+        <a
+            href="#letter"
+            class="open-button"
+        >
+
+            OPEN OUR STORY ↓
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     LOVE LETTER
+======================================================= -->
+
+<section
+    class="letter-section"
+    id="letter"
+>
+
+    <div class="section-label">
+
+        A letter for you
 
     </div>
 
 
-    <section class="hero">
+    <div class="letter">
 
-        <div class="hero-content">
+        <h2>
 
-            <div class="small-title">
+            My love,
 
-                A little piece of my heart ·
-                4 months
+        </h2>
+
+
+        <p>
+
+            Four months might sound like
+            just a number, but to me,
+            it holds so many little moments —
+            the laughs, the conversations,
+            the silly things, the quiet moments,
+            and all those times you made
+            an ordinary day feel a little
+            more special.
+
+        </p>
+
+
+        <p>
+
+            Somehow, in these four months,
+            you've become part of the way
+            I see my days.
+
+            And if I could choose again,
+            I'd still choose every laugh,
+            every memory and every moment
+            that brought us here.
+
+        </p>
+
+
+        <p>
+
+            I don't know exactly what every
+            chapter of our story will look like,
+            but I know I want to keep making
+            beautiful memories with you,
+            one day at a time.
+
+        </p>
+
+
+        <p class="signature">
+
+            Happy four months, my love.
+
+            Here's to us —
+            and to all the moments
+            still waiting for us. ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PHOTO GALLERY
+======================================================= -->
+
+<section class="gallery">
+
+    <div class="section-label">
+
+        Our little universe
+
+    </div>
+
+
+    <h2>
+
+        Just Us.
+
+    </h2>
+
+
+    <p class="gallery-sub">
+
+        Click a photo.
+        I have a little story for each one. ❤️
+
+    </p>
+
+
+    <div class="carousel-container">
+
+        <div
+            class="carousel"
+            id="carousel"
+        >
+
+
+            <!-- PHOTO 1 -->
+
+            <div
+                class="photo"
+                data-memory="0"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 1"
+            >
+
+                <img
+                    src="https://files.catbox.moe/othxzu.heic"
+                    alt="Our memory 1"
+                >
 
             </div>
 
 
-            <h1>
+            <!-- PHOTO 2 -->
 
-                Happy
-                <br>
-                Anniversary
+            <div
+                class="photo"
+                data-memory="1"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 2"
+            >
 
-                <span>
+                <img
+                    src="https://files.catbox.moe/sult6q.heic"
+                    alt="Our memory 2"
+                >
 
-                    My Love
-
-                    <i class="heart">
-                        ♥
-                    </i>
-
-                </span>
-
-            </h1>
-
-
-            <p>
-
-                Four months of us.
-                Four months of memories,
-                laughter, little moments,
-                and a thousand reasons
-                to smile whenever I think of you.
-
-            </p>
+            </div>
 
 
-            <a
-                href="#letter"
-                class="open-button">
+            <!-- PHOTO 3 -->
 
-                Open Our Story ↓
+            <div
+                class="photo"
+                data-memory="2"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 3"
+            >
 
-            </a>
+                <img
+                    src="https://files.catbox.moe/x3kqdj.HEIC"
+                    alt="Our memory 3"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div
+                class="photo"
+                data-memory="3"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 4"
+            >
+
+                <img
+                    src="https://files.catbox.moe/2pjk9z.jpg"
+                    alt="Our memory 4"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div
+                class="photo"
+                data-memory="4"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 5"
+            >
+
+                <img
+                    src="https://files.catbox.moe/sa5gwu.jpg"
+                    alt="Our memory 5"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+
+            <div
+                class="photo"
+                data-memory="5"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 6"
+            >
+
+                <img
+                    src="https://files.catbox.moe/pynw41.jpg"
+                    alt="Our memory 6"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 7 -->
+
+            <div
+                class="photo"
+                data-memory="6"
+                tabindex="0"
+                role="button"
+                aria-label="Open memory 7"
+            >
+
+                <img
+                    src="https://files.catbox.moe/hom9zi.jpg"
+                    alt="Our memory 7"
+                >
+
+            </div>
+
 
         </div>
 
-    </section>
+    </div>
 
 
-    <section
-        class="letter-section"
-        id="letter">
+    <div class="carousel-hint">
 
-        <div class="section-label">
+        60-second dreamy rotation ·
+        click any photo
 
-            A letter for you
+    </div>
 
-        </div>
+</section>
 
 
-        <div class="letter">
+<!-- ======================================================
+     MEMORY POPUP
+======================================================= -->
 
-            <h2>
+<div
+    class="memory-overlay"
+    id="memoryOverlay"
+    aria-hidden="true"
+>
 
-                My love,
+
+    <div
+        class="memory-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="memoryTitle"
+    >
+
+
+        <button
+            class="memory-close"
+            id="memoryClose"
+            type="button"
+            aria-label="Close memory"
+        >
+
+            ×
+
+        </button>
+
+
+        <img
+            id="memoryImage"
+            src=""
+            alt="Selected memory"
+        >
+
+
+        <div class="memory-content">
+
+
+            <div
+                class="memory-number"
+                id="memoryNumber"
+            >
+
+                MEMORY 01
+
+            </div>
+
+
+            <h2
+                id="memoryTitle"
+            >
+
+                Our Memory
 
             </h2>
 
 
-            <p>
+            <p
+                id="memoryStory"
+            >
 
-                Four months might sound like
-                just a number, but to me,
-                it holds so many little moments —
-                the laughs, the conversations,
-                the silly things, the quiet moments,
-                and all those times you made
-                an ordinary day feel a little
-                more special.
+                Our story goes here.
 
             </p>
 
-
-            <p>
-
-                Somehow, in these four months,
-                you've become part of the way
-                I see my days.
-
-                And if I could choose again,
-                I'd still choose every laugh,
-                every memory and every moment
-                that brought us here.
-
-            </p>
-
-
-            <p>
-
-                I don't know exactly what every
-                chapter of our story will look like,
-                but I know I want to keep making
-                beautiful memories with you,
-                one day at a time.
-
-            </p>
-
-
-            <p class="signature">
-
-                Happy four months, my love.
-
-                Here's to us —
-                and to all the moments
-                still waiting for us. ❤️
-
-            </p>
 
         </div>
 
-    </section>
+    </div>
+
+</div>
 
 
-    <section class="gallery">
+<!-- ======================================================
+     FINAL MESSAGE
+======================================================= -->
 
-        <div class="section-label">
+<section class="final">
 
-            Our little universe
+    <div class="final-content">
+
+
+        <div class="final-small">
+
+            And this is only
+            month four...
 
         </div>
 
 
         <h2>
 
-            Just Us.
+            More Memories.
+            <br>
+
+            More Us.
+
+            <span class="heart">
+
+                ♥
+
+            </span>
 
         </h2>
 
 
-        <p class="gallery-sub">
+        <p>
 
-            Click a photo.
-            I have a little story for each one. ❤️
+            Whatever comes next,
+            I hope we keep finding
+            our way back to each other,
+            laughing at the little things
+            and making moments worth
+            remembering.
 
         </p>
 
-
-        <div class="carousel-container">
-
-            <div class="carousel">
-
-
-                <div
-                    class="photo"
-                    data-memory="0">
-
-                    <img src="https://files.catbox.moe/othxzu.heic"
-                        alt="Our memory 1">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="1">
-
-                    <img src="https://files.catbox.moe/sult6q.heic"
-                        alt="Our memory 2">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="2">
-
-                    <img src="https://files.catbox.moe/x3kqdj.HEIC"
-                        alt="Our memory 3">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="3">
-
-                    <img src="https://files.catbox.moe/2pjk9z.jpg"
-                        alt="Our memory 4">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="4">
-
-                    <img src="https://files.catbox.moe/sa5gwu.jpg"
-                        alt="Our memory 5">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="5">
-
-                    <img src="https://files.catbox.moe/pynw41.jpg"
-                        alt="Our memory 6">
-
-                </div>
-
-
-                <div
-                    class="photo"
-                    data-memory="6">
-
-                    <img src="https://files.catbox.moe/hom9zi.jpg"
-                        alt="Our memory 7">
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <div
-        class="memory-overlay"
-        id="memoryOverlay">
-
-
-        <div class="memory-box">
-
-
-            <button
-                class="memory-close"
-                id="memoryClose"
-                aria-label="Close memory">
-
-                ×
-
-            </button>
-
-
-            <img
-                id="memoryImage"
-                src=""
-                alt="Selected memory">
-
-
-            <div class="memory-content">
-
-
-                <div
-                    class="memory-number"
-                    id="memoryNumber">
-
-                    MEMORY 01
-
-                </div>
-
-
-                <h2
-                    id="memoryTitle">
-
-                    Our Memory
-
-                </h2>
-
-
-                <p
-                    id="memoryStory">
-
-                    Our story goes here.
-
-                </p>
-
-
-            </div>
-
-
-        </div>
-
     </div>
 
-
-    <section class="final">
-
-        <div class="final-content">
+</section>
 
 
-            <div class="final-small">
+<!-- ======================================================
+     FOOTER
+======================================================= -->
 
-                And this is only
-                month four...
+<footer>
 
-            </div>
+    MADE WITH LOVE ·
+    FOR US ·
+    2026
 
-
-            <h2>
-
-                More Memories.
-                <br>
-
-                More Us.
-
-                <span class="heart">
-                    ♥
-                </span>
-
-            </h2>
+</footer>
 
 
-            <p>
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
 
-                Whatever comes next,
-                I hope we keep finding
-                our way back to each other,
-                laughing at the little things
-                and making moments worth
-                remembering.
-
-            </p>
+<script>
 
 
-        </div>
+/* ========================================================
+   MEMORY STORIES
+======================================================== */
 
-    </section>
-
-
-
-    <footer>
-
-        MADE WITH LOVE ·
-        FOR US ·
-        2026
-
-    </footer>
-
-    <script>
-
-
-        const memories = [
+const memories = [
 
     {
-        title: "Day at Thewatta",
+        title:
+            "Day at Thewatta",
 
         story:
             "This picture will always have a special place in my heart. Our lovely day out at Thewatta Church. Your smile here is my absolute favorite thing in the world."
     },
 
+
     {
-        title: "A Little Closer",
+        title:
+            "A Little Closer",
 
         story:
             "There are some moments where you don't really need words. Just being close to you somehow makes everything feel a little quieter and a little better. This is one of those memories I could look at a hundred times and still smile."
     },
 
+
     {
-        title: "Best of the Best ❤️",
+        title:
+            "Best of the Best ❤️",
 
         story:
             "A special little moment just for us at Best Western. The connection we share is something I'll always treasure."
     },
 
+
     {
-        title: "Us Being Us",
+        title:
+            "Us Being Us",
 
         story:
-            "Maybe this doesn't look like some huge movie like moment. But that's exactly why I love it. It's just us, being ourselves and enjoying a moment together. Somehow those ordinary moments have become some of my favorite memories."
+            "Maybe this doesn't look like some huge movie-like moment. But that's exactly why I love it. It's just us, being ourselves and enjoying a moment together. Somehow those ordinary moments have become some of my favorite memories."
     },
 
+
     {
-        title: "A Moment I Keep",
+        title:
+            "A Moment I Keep",
 
         story:
             "Some memories don't need a big story behind them. They just feel special. Whenever I see this photo, I remember how good it felt to have you beside me. These are the moments I want to keep collecting with you."
     },
 
+
     {
-        title: "Right Beside Me",
+        title:
+            "Right Beside Me",
 
         story:
             "There's something comforting about knowing that the person you care about is right there beside you. This photo reminds me how much I love those simple moments where we don't have to do anything extraordinary. Just being together is enough."
     },
 
+
     {
-        title: "Four Months ❤️",
+        title:
+            "Four Months ❤️",
 
         story:
             "And somehow, here we are. Four months of memories, laughs, conversations, silly moments and everything in between. Four months might only be the beginning, but I'm grateful for every single moment that brought us here. Happy four months, my love."
@@ -1555,322 +2275,506 @@
 ];
 
 
-        const photos =
-            document.querySelectorAll(
-                ".photo"
-            );
+/* ========================================================
+   ELEMENTS
+======================================================== */
+
+const carousel =
+    document.getElementById(
+        "carousel"
+    );
 
 
-        const overlay =
-            document.getElementById(
-                "memoryOverlay"
-            );
+const photos =
+    document.querySelectorAll(
+        ".photo"
+    );
 
 
-        const memoryImage =
-            document.getElementById(
-                "memoryImage"
-            );
+const overlay =
+    document.getElementById(
+        "memoryOverlay"
+    );
 
 
-        const memoryNumber =
-            document.getElementById(
-                "memoryNumber"
-            );
+const memoryImage =
+    document.getElementById(
+        "memoryImage"
+    );
 
 
-        const memoryTitle =
-            document.getElementById(
-                "memoryTitle"
-            );
+const memoryNumber =
+    document.getElementById(
+        "memoryNumber"
+    );
 
 
-        const memoryStory =
-            document.getElementById(
-                "memoryStory"
-            );
+const memoryTitle =
+    document.getElementById(
+        "memoryTitle"
+    );
 
 
-        const closeButton =
-            document.getElementById(
-                "memoryClose"
-            );
+const memoryStory =
+    document.getElementById(
+        "memoryStory"
+    );
 
 
-        photos.forEach(
-            function(photo) {
-
-                photo.addEventListener(
-                    "click",
-                    function() {
+const closeButton =
+    document.getElementById(
+        "memoryClose"
+    );
 
 
-                        const index =
-                            Number(
-                                photo.dataset.memory
-                            );
+/* ========================================================
+   OPEN MEMORY
+======================================================== */
+
+function openMemory(index) {
 
 
-                        const memory =
-                            memories[index];
+    const safeIndex =
+        Math.max(
+            0,
+            Math.min(
+                memories.length - 1,
+                index
+            )
+        );
 
 
-                        const image =
-                            photo.querySelector(
-                                "img"
-                            );
+    const memory =
+        memories[safeIndex];
 
 
-                        memoryImage.src =
-                            image.src;
+    const photo =
+        photos[safeIndex];
 
 
-                        memoryImage.alt =
-                            image.alt;
+    const image =
+        photo.querySelector(
+            "img"
+        );
 
 
-                        memoryNumber.textContent =
-                            "MEMORY " +
-                            String(
-                                index + 1
-                            ).padStart(
-                                2,
-                                "0"
-                            );
+    memoryImage.src =
+        image.currentSrc ||
+        image.src;
 
 
-                        memoryTitle.textContent =
-                            memory.title;
+    memoryImage.alt =
+        image.alt;
 
 
-                        memoryStory.textContent =
-                            memory.story;
+    memoryNumber.textContent =
+        "MEMORY " +
+        String(
+            safeIndex + 1
+        ).padStart(
+            2,
+            "0"
+        );
 
 
-                        overlay.classList.add(
-                            "active"
-                        );
+    memoryTitle.textContent =
+        memory.title;
 
 
-                        document.body.style
-                            .overflow =
-                            "hidden";
+    memoryStory.textContent =
+        memory.story;
 
-                    }
+
+    overlay.classList.add(
+        "active"
+    );
+
+
+    overlay.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    carousel.classList.add(
+        "paused"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    closeButton.focus();
+
+}
+
+
+/* ========================================================
+   CLOSE MEMORY
+======================================================== */
+
+function closeMemory() {
+
+
+    overlay.classList.remove(
+        "active"
+    );
+
+
+    overlay.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+
+    memoryImage.src = "";
+
+
+    carousel.classList.remove(
+        "paused"
+    );
+
+}
+
+
+/* ========================================================
+   PHOTO CLICK
+======================================================== */
+
+photos.forEach(
+    function(photo) {
+
+
+        photo.addEventListener(
+            "click",
+            function() {
+
+                openMemory(
+                    Number(
+                        photo.dataset.memory
+                    )
                 );
 
             }
         );
 
 
-        function closeMemory() {
-
-            overlay.classList.remove(
-                "active"
-            );
-
-
-            document.body.style
-                .overflow =
-                "";
-        }
-
-
-        closeButton.addEventListener(
-            "click",
-            closeMemory
-        );
-
-
-        /* =================================================
-           CLICK OUTSIDE
-        ================================================= */
-
-
-        overlay.addEventListener(
-            "click",
-            function(event) {
-
-                if (
-                    event.target ===
-                    overlay
-                ) {
-
-                    closeMemory();
-
-                }
-
-            }
-        );
-
-        document.addEventListener(
+        photo.addEventListener(
             "keydown",
             function(event) {
 
+
                 if (
                     event.key ===
-                    "Escape"
+                    "Enter" ||
+
+                    event.key ===
+                    " "
                 ) {
 
-                    closeMemory();
+
+                    event.preventDefault();
+
+
+                    openMemory(
+                        Number(
+                            photo.dataset.memory
+                        )
+                    );
 
                 }
 
             }
         );
 
-        function createHeart() {
-
-            const heart =
-                document.createElement(
-                    "div"
-                );
+    }
+);
 
 
-            heart.className =
-                "floating-heart";
+/* ========================================================
+   CLOSE BUTTON
+======================================================== */
+
+closeButton.addEventListener(
+    "click",
+    closeMemory
+);
 
 
-            heart.innerHTML =
-                "♥";
+/* ========================================================
+   CLICK OUTSIDE POPUP
+======================================================== */
+
+overlay.addEventListener(
+    "click",
+    function(event) {
 
 
-            heart.style.left =
-                Math.random() *
-                100 +
-                "%";
+        if (
+            event.target ===
+            overlay
+        ) {
+
+            closeMemory();
+
+        }
+
+    }
+);
 
 
-            heart.style.fontSize =
-                (
-                    12 +
-                    Math.random() *
-                    20
-                ) +
-                "px";
+/* ========================================================
+   ESCAPE KEY
+======================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
 
 
-            heart.style.animationDuration =
-                (
-                    5 +
-                    Math.random() *
-                    5
-                ) +
-                "s";
+        if (
+            event.key ===
+            "Escape" &&
+
+            overlay.classList.contains(
+                "active"
+            )
+        ) {
+
+            closeMemory();
+
+        }
+
+    }
+);
 
 
-            document.body.appendChild(
-                heart
-            );
+/* ========================================================
+   FLOATING HEARTS
+======================================================== */
+
+const heartContainer =
+    document.getElementById(
+        "floatingHearts"
+    );
+
+
+function createHeart() {
+
+
+    const heart =
+        document.createElement(
+            "span"
+        );
+
+
+    heart.className =
+        "floating-heart";
+
+
+    heart.textContent =
+        "♥";
+
+
+    const size =
+        12 +
+        Math.random() *
+        18;
+
+
+    const duration =
+        6 +
+        Math.random() *
+        5;
+
+
+    const left =
+        Math.random() *
+        100;
+
+
+    const drift =
+        (
+            Math.random() *
+            160 -
+            80
+        ).toFixed(0)
+        + "px";
+
+
+    const rotation =
+        (
+            Math.random() *
+            50 -
+            25
+        ).toFixed(0)
+        + "deg";
+
+
+    heart.style.left =
+        left + "%";
+
+
+    heart.style.fontSize =
+        size + "px";
+
+
+    heart.style.animationDuration =
+        duration + "s";
+
+
+    heart.style.setProperty(
+        "--drift",
+        drift
+    );
+
+
+    heart.style.setProperty(
+        "--rotation",
+        rotation
+    );
+
+
+    heartContainer.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        function() {
+
+            heart.remove();
+
+        },
+        (duration + 1) * 1000
+    );
+
+}
+
+
+/* Create some immediately */
+
+for (
+    let i = 0;
+    i < 8;
+    i++
+) {
+
+    setTimeout(
+        createHeart,
+        i * 650
+    );
+
+}
+
+
+/* Keep them coming */
+
+setInterval(
+    createHeart,
+    1100
+);
+
+
+/* ========================================================
+   HERO MOUSE EFFECT
+======================================================== */
+
+const heroContent =
+    document.getElementById(
+        "heroContent"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+
+        const x =
+            (
+                event.clientX /
+                window.innerWidth -
+                .5
+            ) * 8;
+
+
+        const y =
+            (
+                event.clientY /
+                window.innerHeight -
+                .5
+            ) * 8;
+
+
+        heroContent.style.transform =
+            `
+            translateY(-5px)
+            rotateY(${x}deg)
+            rotateX(${-y}deg)
+            `;
+
+    }
+);
+
+
+/* ========================================================
+   TOUCH CAROUSEL
+======================================================== */
+
+carousel.addEventListener(
+    "touchstart",
+    function() {
+
+        carousel.classList.add(
+            "paused"
+        );
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+carousel.addEventListener(
+    "touchend",
+    function() {
+
+
+        if (
+            !overlay.classList.contains(
+                "active"
+            )
+        ) {
 
 
             setTimeout(
                 function() {
 
-                    heart.remove();
+                    carousel.classList.remove(
+                        "paused"
+                    );
 
                 },
-                10000
+                900
             );
 
         }
 
-
-        setInterval(
-            createHeart,
-            2000
-        );
-
-        const hero =
-            document.querySelector(
-                ".hero-content"
-            );
+    },
+    {
+        passive: true
+    }
+);
 
 
-        document.addEventListener(
-            "mousemove",
-            function(event) {
-
-
-                const x =
-                    (
-                        event.clientX /
-                        window.innerWidth
-                        - .5
-                    ) * 10;
-
-
-                const y =
-                    (
-                        event.clientY /
-                        window.innerHeight
-                        - .5
-                    ) * 10;
-
-
-                hero.style.transform =
-                    `
-                    translateY(-5px)
-                    rotateY(${x}deg)
-                    rotateX(${-y}deg)
-                    `;
-
-            }
-        );
-
-
-        let startX = 0;
-
-
-        const carousel =
-            document.querySelector(
-                ".carousel"
-            );
-
-
-        carousel.addEventListener(
-            "touchstart",
-            function(event) {
-
-                startX =
-                    event.touches[0]
-                        .clientX;
-
-            }
-        );
-
-
-        carousel.addEventListener(
-            "touchmove",
-            function(event) {
-
-                const currentX =
-                    event.touches[0]
-                        .clientX;
-
-
-                const difference =
-                    currentX -
-                    startX;
-
-
-                carousel.style
-                    .animationPlayState =
-                    "paused";
-
-
-                carousel.style.transform =
-                    `
-                    rotateY(
-                        ${difference}deg
-                    )
-                    `;
-
-            }
-        );
-
-
-    </script>
+</script>
 
 
 </body>
