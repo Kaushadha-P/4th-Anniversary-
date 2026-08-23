@@ -66,8 +66,7 @@ html {
 
     --muted: #cdbbc2;
 
-    --border:
-        rgba(255, 182, 193, 0.18);
+    --border: rgba(255, 182, 193, 0.18);
 }
 
 
@@ -106,7 +105,7 @@ body {
 
 
 /* =========================================================
-   BACKGROUND GLOW
+   BACKGROUND
 ========================================================= */
 
 .background-glow {
@@ -394,12 +393,47 @@ body {
 
 
 /* =========================================================
-   HEART
+   HEARTS
 ========================================================= */
 
-.heart {
+/* Main heart beside "My Love" */
+
+.hero h1 .heart {
 
     display: inline-block;
+
+    font-size: 1em;
+
+    line-height: 1;
+
+    vertical-align: middle;
+
+    margin-left: 6px;
+
+    color:
+        #ff7197;
+
+    animation:
+        heartbeat
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* Final heart */
+
+.final h2 .heart {
+
+    display: inline-block;
+
+    font-size: .75em;
+
+    line-height: 1;
+
+    vertical-align: middle;
+
+    margin-left: 6px;
 
     color:
         #ff7197;
@@ -424,13 +458,13 @@ body {
     50% {
 
         transform:
-            scale(1.22);
+            scale(1.16);
     }
 }
 
 
 /* =========================================================
-   HERO PARAGRAPH
+   HERO TEXT
 ========================================================= */
 
 .hero p {
@@ -523,7 +557,7 @@ body {
 
 
 /* =========================================================
-   LETTER
+   LOVE LETTER
 ========================================================= */
 
 .letter-section {
@@ -623,10 +657,6 @@ body {
 }
 
 
-/* =========================================================
-   LETTER TITLE
-========================================================= */
-
 .letter h2 {
 
     position: relative;
@@ -659,10 +689,6 @@ body {
 }
 
 
-/* =========================================================
-   LETTER TEXT
-========================================================= */
-
 .letter p {
 
     position: relative;
@@ -683,10 +709,6 @@ body {
         #eadde2;
 }
 
-
-/* =========================================================
-   SIGNATURE
-========================================================= */
 
 .signature {
 
@@ -770,7 +792,7 @@ body {
 
 
 /* =========================================================
-   CAROUSEL
+   3D CAROUSEL
 ========================================================= */
 
 .carousel-container {
@@ -842,17 +864,10 @@ body {
         rgba(0,0,0,.7);
 
     transition:
-        filter
-        .3s,
-
-        box-shadow
-        .3s;
+        filter .3s,
+        box-shadow .3s;
 }
 
-
-/* =========================================================
-   CLICK LABEL
-========================================================= */
 
 .photo::after {
 
@@ -926,9 +941,16 @@ and
 }
 
 
-/* =========================================================
-   PHOTO IMAGE
-========================================================= */
+.photo:focus-visible {
+
+    outline:
+        2px solid
+        var(--pink);
+
+    outline-offset:
+        5px;
+}
+
 
 .photo img {
 
@@ -1154,10 +1176,6 @@ and
 }
 
 
-/* =========================================================
-   POPUP PHOTO
-========================================================= */
-
 .memory-box > img {
 
     width: 100%;
@@ -1172,10 +1190,6 @@ and
         #150a10;
 }
 
-
-/* =========================================================
-   POPUP TEXT
-========================================================= */
 
 .memory-content {
 
@@ -1301,7 +1315,7 @@ and
 
 
 /* =========================================================
-   FINAL SECTION
+   FINAL
 ========================================================= */
 
 .final {
@@ -1437,6 +1451,7 @@ footer {
 @media
 (max-width:700px) {
 
+
     .hero {
 
         min-height:
@@ -1462,6 +1477,18 @@ footer {
 
         margin-top:
             18px;
+    }
+
+
+    /* Keep heart similar to the My Love text */
+
+    .hero h1 .heart {
+
+        font-size:
+            1em;
+
+        margin-left:
+            5px;
     }
 
 
@@ -1626,6 +1653,13 @@ footer {
             16px;
     }
 
+
+    .final h2 .heart {
+
+        font-size:
+            .75em;
+    }
+
 }
 
 
@@ -1636,7 +1670,9 @@ footer {
 @media
 (prefers-reduced-motion: reduce) {
 
-    * {
+    *,
+    *::before,
+    *::after {
 
         animation-duration:
             .001ms !important;
@@ -1726,7 +1762,7 @@ footer {
 
 
 <!-- ======================================================
-     FLOATING HEART CONTAINER
+     FLOATING HEARTS
 ======================================================= -->
 
 <div
@@ -1768,9 +1804,7 @@ footer {
                 My Love
 
                 <i class="heart">
-
                     ♥
-
                 </i>
 
             </span>
@@ -1822,9 +1856,7 @@ footer {
     <div class="letter">
 
         <h2>
-
             My love,
-
         </h2>
 
 
@@ -1896,9 +1928,7 @@ footer {
 
 
     <h2>
-
         Just Us.
-
     </h2>
 
 
@@ -1918,8 +1948,6 @@ footer {
         >
 
 
-            <!-- PHOTO 1 -->
-
             <div
                 class="photo"
                 data-memory="0"
@@ -1935,8 +1963,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 2 -->
 
             <div
                 class="photo"
@@ -1954,8 +1980,6 @@ footer {
             </div>
 
 
-            <!-- PHOTO 3 -->
-
             <div
                 class="photo"
                 data-memory="2"
@@ -1971,8 +1995,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 4 -->
 
             <div
                 class="photo"
@@ -1990,8 +2012,6 @@ footer {
             </div>
 
 
-            <!-- PHOTO 5 -->
-
             <div
                 class="photo"
                 data-memory="4"
@@ -2008,8 +2028,6 @@ footer {
             </div>
 
 
-            <!-- PHOTO 6 -->
-
             <div
                 class="photo"
                 data-memory="5"
@@ -2025,8 +2043,6 @@ footer {
 
             </div>
 
-
-            <!-- PHOTO 7 -->
 
             <div
                 class="photo"
@@ -2069,14 +2085,12 @@ footer {
     aria-hidden="true"
 >
 
-
     <div
         class="memory-box"
         role="dialog"
         aria-modal="true"
         aria-labelledby="memoryTitle"
     >
-
 
         <button
             class="memory-close"
@@ -2098,7 +2112,6 @@ footer {
 
 
         <div class="memory-content">
-
 
             <div
                 class="memory-number"
@@ -2127,7 +2140,6 @@ footer {
 
             </p>
 
-
         </div>
 
     </div>
@@ -2142,7 +2154,6 @@ footer {
 <section class="final">
 
     <div class="final-content">
-
 
         <div class="final-small">
 
@@ -2160,9 +2171,7 @@ footer {
             More Us.
 
             <span class="heart">
-
                 ♥
-
             </span>
 
         </h2>
@@ -2333,7 +2342,6 @@ const closeButton =
 
 function openMemory(index) {
 
-
     const safeIndex =
         Math.max(
             0,
@@ -2416,7 +2424,6 @@ function openMemory(index) {
 
 function closeMemory() {
 
-
     overlay.classList.remove(
         "active"
     );
@@ -2432,7 +2439,8 @@ function closeMemory() {
         "";
 
 
-    memoryImage.src = "";
+    memoryImage.src =
+        "";
 
 
     carousel.classList.remove(
@@ -2443,7 +2451,7 @@ function closeMemory() {
 
 
 /* ========================================================
-   PHOTO CLICK
+   PHOTO CLICK + KEYBOARD
 ======================================================== */
 
 photos.forEach(
@@ -2477,7 +2485,6 @@ photos.forEach(
                     " "
                 ) {
 
-
                     event.preventDefault();
 
 
@@ -2507,7 +2514,7 @@ closeButton.addEventListener(
 
 
 /* ========================================================
-   CLICK OUTSIDE POPUP
+   CLICK OUTSIDE
 ======================================================== */
 
 overlay.addEventListener(
@@ -2565,7 +2572,6 @@ const heartContainer =
 
 
 function createHeart() {
-
 
     const heart =
         document.createElement(
@@ -2657,7 +2663,7 @@ function createHeart() {
 }
 
 
-/* Create some immediately */
+/* Immediate hearts */
 
 for (
     let i = 0;
@@ -2673,7 +2679,7 @@ for (
 }
 
 
-/* Keep them coming */
+/* Continuous hearts */
 
 setInterval(
     createHeart,
@@ -2724,7 +2730,7 @@ document.addEventListener(
 
 
 /* ========================================================
-   TOUCH CAROUSEL
+   TOUCH SUPPORT
 ======================================================== */
 
 carousel.addEventListener(
@@ -2753,7 +2759,6 @@ carousel.addEventListener(
             )
         ) {
 
-
             setTimeout(
                 function() {
 
@@ -2775,7 +2780,6 @@ carousel.addEventListener(
 
 
 </script>
-
 
 </body>
 
