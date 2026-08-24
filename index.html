@@ -12,6 +12,11 @@
 
     <title>Happy 4 Months, My Love ❤️</title>
 
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -30,6 +35,10 @@
 
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
     margin: 0;
@@ -57,7 +66,8 @@ html {
 
     --muted: #cdbbc2;
 
-    --border: rgba(255, 182, 193, 0.18);
+    --border:
+        rgba(255, 182, 193, 0.18);
 }
 
 
@@ -85,24 +95,35 @@ body {
             var(--background-two)
         );
 
-    color: var(--cream);
+    color:
+        var(--cream);
 
     font-family:
         "Lora",
         serif;
 
-    overflow-x: hidden;
+    overflow-x:
+        hidden;
 }
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
 
 .background-glow {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
-    z-index: -5;
+    z-index:
+        -5;
 
     background:
 
@@ -119,31 +140,46 @@ body {
         );
 }
 
+
+/* =========================================================
+   STARS
+========================================================= */
+
 .stars {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: -3;
+    z-index:
+        -3;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
 .star {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 3px;
+    width:
+        3px;
 
-    height: 3px;
+    height:
+        3px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: white;
+    background:
+        white;
 
-    opacity: .25;
+    opacity:
+        .25;
 
     animation:
         twinkle
@@ -158,7 +194,8 @@ body {
     0%,
     100% {
 
-        opacity: .15;
+        opacity:
+            .15;
 
         transform:
             scale(.7);
@@ -166,32 +203,45 @@ body {
 
     50% {
 
-        opacity: .95;
+        opacity:
+            .95;
 
         transform:
             scale(1.3);
     }
 }
 
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
 .floating-hearts {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
-    z-index: 50;
+    z-index:
+        50;
 }
 
 
 .floating-heart {
 
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: -35px;
+    bottom:
+        -35px;
 
     color:
         var(--pink);
@@ -205,7 +255,8 @@ body {
         linear
         forwards;
 
-    opacity: 0;
+    opacity:
+        0;
 }
 
 
@@ -222,17 +273,20 @@ body {
             rotate(0deg)
             scale(.75);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 
     12% {
 
-        opacity: .8;
+        opacity:
+            .8;
     }
 
     88% {
 
-        opacity: .45;
+        opacity:
+            .45;
     }
 
     100% {
@@ -246,23 +300,135 @@ body {
             rotate(var(--rotation))
             scale(1.15);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 }
 
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-button {
+
+    position:
+        fixed;
+
+    right:
+        20px;
+
+    bottom:
+        20px;
+
+    z-index:
+        300;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        46px;
+
+    padding:
+        11px
+        18px;
+
+    border:
+        1px solid
+        rgba(255,182,193,.25);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(20,8,14,.78);
+
+    backdrop-filter:
+        blur(14px);
+
+    color:
+        var(--pink-light);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        1px;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.35);
+
+    transition:
+        .3s ease;
+}
+
+
+.music-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,100,140,.15);
+
+    border-color:
+        rgba(255,182,193,.5);
+}
+
+
+.music-button.playing {
+
+    box-shadow:
+        0 0 25px
+        rgba(255,100,140,.18),
+
+        0 10px 35px
+        rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
 
-    min-height: 100vh;
+    min-height:
+        100vh;
 
-    display: grid;
+    display:
+        grid;
 
-    place-items: center;
+    place-items:
+        center;
 
-    padding: 40px 20px;
+    padding:
+        40px
+        20px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    perspective: 1200px;
+    perspective:
+        1200px;
 }
 
 
@@ -283,27 +449,38 @@ body {
 
 .small-title {
 
-    margin-bottom: 24px;
+    margin-bottom:
+        24px;
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
     color:
         var(--pink-soft);
 }
 
+
+/* =========================================================
+   MAIN ROMANTIC TITLE
+========================================================= */
+
 .hero h1 {
 
-    margin: 0;
+    margin:
+        0;
 
     font-family:
         "Dancing Script",
@@ -316,9 +493,11 @@ body {
             9rem
         );
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    line-height: .88;
+    line-height:
+        .88;
 
     color:
         var(--pink);
@@ -335,19 +514,24 @@ body {
 
 .hero h1 span {
 
-    display: block;
+    display:
+        block;
 
-    margin-top: 22px;
+    margin-top:
+        22px;
 
     font-family:
         "Dancing Script",
         cursive;
 
-    font-size: .48em;
+    font-size:
+        .48em;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
     color:
         var(--pink-light);
@@ -357,19 +541,29 @@ body {
         rgba(255,182,193,.24);
 }
 
-/* Main heart beside "My Love" */
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+/* Heart matches "My Love" */
 
 .hero h1 .heart {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    font-size: 1em;
+    font-size:
+        1em;
 
-    line-height: 1;
+    line-height:
+        1;
 
-    vertical-align: middle;
+    vertical-align:
+        middle;
 
-    margin-left: 6px;
+    margin-left:
+        6px;
 
     color:
         #ff7197;
@@ -386,15 +580,20 @@ body {
 
 .final h2 .heart {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    font-size: .75em;
+    font-size:
+        .75em;
 
-    line-height: 1;
+    line-height:
+        1;
 
-    vertical-align: middle;
+    vertical-align:
+        middle;
 
-    margin-left: 6px;
+    margin-left:
+        6px;
 
     color:
         #ff7197;
@@ -423,9 +622,15 @@ body {
     }
 }
 
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
 .hero p {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
     margin:
         38px
@@ -436,25 +641,37 @@ body {
         "Lora",
         serif;
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    line-height: 1.95;
+    line-height:
+        1.95;
 
     color:
         var(--muted);
 }
 
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
 .open-button {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    margin-top: 34px;
+    margin-top:
+        34px;
 
-    min-height: 48px;
+    min-height:
+        48px;
 
     padding:
         12px
@@ -464,7 +681,8 @@ body {
         1px solid
         rgba(255,182,193,.22);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
         rgba(255,255,255,.05);
@@ -472,17 +690,21 @@ body {
     color:
         #fff7f9;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    letter-spacing: 1.5px;
+    letter-spacing:
+        1.5px;
 
     transition:
         .35s
@@ -506,6 +728,11 @@ body {
         rgba(255,182,193,.5);
 }
 
+
+/* =========================================================
+   LOVE LETTER
+========================================================= */
+
 .letter-section {
 
     padding:
@@ -513,23 +740,30 @@ body {
         20px;
 }
 
+
 .section-label {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
-    text-align: center;
+    text-align:
+        center;
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
     color:
         var(--pink-soft);
@@ -538,11 +772,14 @@ body {
 
 .letter {
 
-    position: relative;
+    position:
+        relative;
 
-    max-width: 820px;
+    max-width:
+        820px;
 
-    margin: auto;
+    margin:
+        auto;
 
     padding:
         clamp(
@@ -551,13 +788,15 @@ body {
             68px
         );
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         1px solid
         var(--border);
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     background:
 
@@ -578,17 +817,23 @@ body {
 
 .letter::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 300px;
+    width:
+        300px;
 
-    height: 300px;
+    height:
+        300px;
 
-    top: -150px;
+    top:
+        -150px;
 
-    right: -100px;
+    right:
+        -100px;
 
     background:
         #ff4a80;
@@ -596,19 +841,24 @@ body {
     filter:
         blur(130px);
 
-    opacity: .12;
+    opacity:
+        .12;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
 .letter h2 {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 1;
+    z-index:
+        1;
 
-    margin-bottom: 26px;
+    margin-bottom:
+        26px;
 
     font-family:
         "Dancing Script",
@@ -621,9 +871,11 @@ body {
             5.3rem
         );
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    line-height: 1;
+    line-height:
+        1;
 
     color:
         var(--pink);
@@ -636,19 +888,24 @@ body {
 
 .letter p {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 1;
+    z-index:
+        1;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     font-family:
         "Lora",
         serif;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    line-height: 2;
+    line-height:
+        2;
 
     color:
         #eadde2;
@@ -657,7 +914,8 @@ body {
 
 .signature {
 
-    margin-top: 28px;
+    margin-top:
+        28px;
 
     font-family:
         "Dancing Script",
@@ -673,6 +931,11 @@ body {
         var(--pink) !important;
 }
 
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
 .gallery {
 
     padding:
@@ -680,13 +943,15 @@ body {
         20px
         160px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 }
 
 
 .gallery h2 {
 
-    text-align: center;
+    text-align:
+        center;
 
     font-family:
         "Dancing Script",
@@ -699,9 +964,11 @@ body {
             7.5rem
         );
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    line-height: .9;
+    line-height:
+        .9;
 
     color:
         var(--pink);
@@ -714,41 +981,57 @@ body {
 
 .gallery-sub {
 
-    margin-top: 12px;
+    margin-top:
+        12px;
 
-    text-align: center;
+    text-align:
+        center;
 
     font-family:
         "Lora",
         serif;
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    font-style: italic;
+    font-style:
+        italic;
 
     color:
         #bdaeb5;
 }
 
+
+/* =========================================================
+   3D CAROUSEL
+========================================================= */
+
 .carousel-container {
 
-    height: 650px;
+    height:
+        650px;
 
-    display: grid;
+    display:
+        grid;
 
-    place-items: center;
+    place-items:
+        center;
 
-    perspective: 1400px;
+    perspective:
+        1400px;
 }
 
 
 .carousel {
 
-    width: 240px;
+    width:
+        240px;
 
-    height: 350px;
+    height:
+        350px;
 
-    position: relative;
+    position:
+        relative;
 
     transform-style:
         preserve-3d;
@@ -773,26 +1056,33 @@ body {
 
 .photo {
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
-    width: 240px;
+    width:
+        240px;
 
-    height: 350px;
+    height:
+        350px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         1px solid
         rgba(255,182,193,.25);
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         #150a10;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     box-shadow:
         0 30px 80px
@@ -809,11 +1099,14 @@ body {
     content:
         "♥  CLICK";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 50%;
+    left:
+        50%;
 
-    bottom: 16px;
+    bottom:
+        16px;
 
     transform:
         translateX(-50%);
@@ -839,11 +1132,14 @@ body {
         "Montserrat",
         sans-serif;
 
-    font-size: 8px;
+    font-size:
+        8px;
 
-    letter-spacing: 2px;
+    letter-spacing:
+        2px;
 
-    opacity: 0;
+    opacity:
+        0;
 
     transition:
         .3s;
@@ -871,7 +1167,8 @@ and
 
     .photo:hover::after {
 
-        opacity: 1;
+        opacity:
+            1;
     }
 }
 
@@ -889,50 +1186,95 @@ and
 
 .photo img {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    display: block;
+    display:
+        block;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 }
+
+
+/* =========================================================
+   9 PHOTO POSITIONS
+========================================================= */
 
 .photo:nth-child(1) {
-    transform: rotateY(0deg) translateZ(420px);
+
+    transform:
+        rotateY(0deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(2) {
-    transform: rotateY(40deg) translateZ(420px);
+
+    transform:
+        rotateY(40deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(3) {
-    transform: rotateY(80deg) translateZ(420px);
+
+    transform:
+        rotateY(80deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(4) {
-    transform: rotateY(120deg) translateZ(420px);
+
+    transform:
+        rotateY(120deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(5) {
-    transform: rotateY(160deg) translateZ(420px);
+
+    transform:
+        rotateY(160deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(6) {
-    transform: rotateY(200deg) translateZ(420px);
+
+    transform:
+        rotateY(200deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(7) {
-    transform: rotateY(240deg) translateZ(420px);
+
+    transform:
+        rotateY(240deg)
+        translateZ(420px);
 }
+
 
 .photo:nth-child(8) {
-    transform: rotateY(280deg) translateZ(420px);
+
+    transform:
+        rotateY(280deg)
+        translateZ(420px);
 }
 
+
 .photo:nth-child(9) {
-    transform: rotateY(320deg) translateZ(420px);
+
+    transform:
+        rotateY(320deg)
+        translateZ(420px);
 }
+
 
 @keyframes rotateCarousel {
 
@@ -952,35 +1294,50 @@ and
 
 .carousel-hint {
 
-    text-align: center;
+    text-align:
+        center;
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: 9px;
+    font-size:
+        9px;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     color:
         #806e77;
 }
 
+
+/* =========================================================
+   MEMORY POPUP
+========================================================= */
+
 .memory-overlay {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    padding: 20px;
+    padding:
+        20px;
 
     background:
         rgba(0,0,0,.84);
@@ -988,27 +1345,25 @@ and
     backdrop-filter:
         blur(18px);
 
-    z-index: 200;
+    z-index:
+        200;
 
-    opacity: 0;
+    opacity:
+        0;
 
     visibility:
         hidden;
 
     transition:
-        opacity
-        .4s
-        ease,
-
-        visibility
-        .4s
-        ease;
+        opacity .4s ease,
+        visibility .4s ease;
 }
 
 
 .memory-overlay.active {
 
-    opacity: 1;
+    opacity:
+        1;
 
     visibility:
         visible;
@@ -1017,7 +1372,8 @@ and
 
 .memory-box {
 
-    position: relative;
+    position:
+        relative;
 
     width:
         min(
@@ -1028,12 +1384,14 @@ and
     max-height:
         90vh;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         45% 55%;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         1px solid
@@ -1083,13 +1441,17 @@ and
 
 .memory-box > img {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    min-height: 500px;
+    min-height:
+        500px;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
     background:
         #150a10;
@@ -1098,11 +1460,14 @@ and
 
 .memory-content {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    justify-content: center;
+    justify-content:
+        center;
 
     padding:
         55px
@@ -1112,17 +1477,21 @@ and
 
 .memory-number {
 
-    margin-bottom: 16px;
+    margin-bottom:
+        16px;
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: 9px;
+    font-size:
+        9px;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     color:
         #dca8b7;
@@ -1131,7 +1500,8 @@ and
 
 .memory-content h2 {
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
     font-family:
         "Dancing Script",
@@ -1144,9 +1514,11 @@ and
             4.6rem
         );
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    line-height: 1;
+    line-height:
+        1;
 
     color:
         var(--pink);
@@ -1159,33 +1531,47 @@ and
         "Lora",
         serif;
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    line-height: 1.9;
+    line-height:
+        1.9;
 
     color:
         #decfd5;
 }
 
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
 .memory-close {
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 14px;
+    top:
+        14px;
 
-    right: 14px;
+    right:
+        14px;
 
-    z-index: 5;
+    z-index:
+        5;
 
-    width: 44px;
+    width:
+        44px;
 
-    height: 44px;
+    height:
+        44px;
 
     border:
         1px solid
         rgba(255,182,193,.18);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
         rgba(0,0,0,.4);
@@ -1193,11 +1579,14 @@ and
     color:
         var(--pink);
 
-    font-size: 27px;
+    font-size:
+        27px;
 
-    line-height: 1;
+    line-height:
+        1;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     transition:
         .3s;
@@ -1213,13 +1602,21 @@ and
         rotate(90deg);
 }
 
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
 .final {
 
-    min-height: 85vh;
+    min-height:
+        85vh;
 
-    display: grid;
+    display:
+        grid;
 
-    place-items: center;
+    place-items:
+        center;
 
     padding:
         80px
@@ -1243,11 +1640,14 @@ and
         "Montserrat",
         sans-serif;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
     text-transform:
         uppercase;
@@ -1338,6 +1738,11 @@ footer {
         4px;
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media
 (max-width:700px) {
 
@@ -1370,7 +1775,9 @@ footer {
     }
 
 
-    /* Keep heart similar to the My Love text */
+    /*
+       Keep heart matched to My Love
+    */
 
     .hero h1 .heart {
 
@@ -1442,72 +1849,57 @@ footer {
     }
 
 
-    .photo:nth-child(1) {
+    /* 9-photo mobile geometry */
 
+    .photo:nth-child(1) {
         transform:
             rotateY(0deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(2) {
-
         transform:
             rotateY(40deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(3) {
-
         transform:
             rotateY(80deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(4) {
-
         transform:
             rotateY(120deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(5) {
-
         transform:
             rotateY(160deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(6) {
-
         transform:
             rotateY(200deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(7) {
-
         transform:
             rotateY(240deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(8) {
-
         transform:
             rotateY(280deg)
             translateZ(320px);
     }
 
-
     .photo:nth-child(9) {
-
         transform:
             rotateY(320deg)
             translateZ(320px);
@@ -1560,13 +1952,28 @@ footer {
     }
 
 
-    .final h2 .heart {
+    .music-button {
+
+        right:
+            14px;
+
+        bottom:
+            14px;
 
         font-size:
-            .75em;
+            9px;
+
+        padding:
+            10px
+            14px;
     }
 
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
 @media
 (prefers-reduced-motion: reduce) {
@@ -1597,7 +2004,19 @@ footer {
 
 <body>
 
-<div class="background-glow"></div>
+
+<!-- ======================================================
+     BACKGROUND
+======================================================= -->
+
+<div
+    class="background-glow">
+</div>
+
+
+<!-- ======================================================
+     STARS
+======================================================= -->
 
 <div
     class="stars"
@@ -1651,11 +2070,21 @@ footer {
 
 </div>
 
+
+<!-- ======================================================
+     FLOATING HEARTS
+======================================================= -->
+
 <div
     class="floating-hearts"
     id="floatingHearts"
     aria-hidden="true">
 </div>
+
+
+<!-- ======================================================
+     MUSIC
+======================================================= -->
 
 <audio
     id="loveMusic"
@@ -1682,7 +2111,12 @@ footer {
     🎵 Play our song
 
 </button>
-    
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
 <section class="hero">
 
     <div
@@ -1743,6 +2177,11 @@ footer {
 
 </section>
 
+
+<!-- ======================================================
+     LOVE LETTER
+======================================================= -->
+
 <section
     class="letter-section"
     id="letter"
@@ -1758,7 +2197,9 @@ footer {
     <div class="letter">
 
         <h2>
+
             My love,
+
         </h2>
 
 
@@ -1766,7 +2207,7 @@ footer {
 
             Four months might sound like
             just a number, but to me,
-            it holds so many little moments 
+            it holds so many little moments —
             the laughs, the conversations,
             the silly things, the quiet moments,
             and all those times you made
@@ -1805,7 +2246,7 @@ footer {
 
             Happy four months, my love.
 
-            Here's to us 
+            Here's to us —
             and to all the moments
             still waiting for us. ❤️
 
@@ -1814,6 +2255,11 @@ footer {
     </div>
 
 </section>
+
+
+<!-- ======================================================
+     GALLERY
+======================================================= -->
 
 <section class="gallery">
 
@@ -1825,7 +2271,9 @@ footer {
 
 
     <h2>
+
         Just Us.
+
     </h2>
 
 
@@ -1845,6 +2293,8 @@ footer {
         >
 
 
+            <!-- PHOTO 1 -->
+
             <div
                 class="photo"
                 data-memory="0"
@@ -1860,6 +2310,8 @@ footer {
 
             </div>
 
+
+            <!-- PHOTO 2 -->
 
             <div
                 class="photo"
@@ -1877,6 +2329,8 @@ footer {
             </div>
 
 
+            <!-- PHOTO 3 -->
+
             <div
                 class="photo"
                 data-memory="2"
@@ -1892,6 +2346,8 @@ footer {
 
             </div>
 
+
+            <!-- PHOTO 4 -->
 
             <div
                 class="photo"
@@ -1909,6 +2365,8 @@ footer {
             </div>
 
 
+            <!-- PHOTO 5 -->
+
             <div
                 class="photo"
                 data-memory="4"
@@ -1924,6 +2382,8 @@ footer {
 
             </div>
 
+
+            <!-- PHOTO 6 -->
 
             <div
                 class="photo"
@@ -1941,6 +2401,8 @@ footer {
             </div>
 
 
+            <!-- PHOTO 7 -->
+
             <div
                 class="photo"
                 data-memory="6"
@@ -1957,6 +2419,8 @@ footer {
             </div>
 
 
+            <!-- PHOTO 8 -->
+
             <div
                 class="photo"
                 data-memory="7"
@@ -1966,12 +2430,14 @@ footer {
             >
 
                 <img
-                    src="https://files.catbox.moe/4yld4u.jpg"
+                    src="IMG_1462.jpg"
                     alt="Our memory 8"
                 >
 
             </div>
 
+
+            <!-- PHOTO 9 -->
 
             <div
                 class="photo"
@@ -1982,7 +2448,7 @@ footer {
             >
 
                 <img
-                    src="https://files.catbox.moe/xzrner.jpg"
+                    src="IMG_1617.jpg"
                     alt="Our memory 9"
                 >
 
@@ -1996,12 +2462,17 @@ footer {
 
     <div class="carousel-hint">
 
-        60-second dreamy rotation · 9 memories ·
+        60-second dreamy rotation ·
         click any photo
 
     </div>
 
 </section>
+
+
+<!-- ======================================================
+     MEMORY POPUP
+======================================================= -->
 
 <div
     class="memory-overlay"
@@ -2015,6 +2486,7 @@ footer {
         aria-modal="true"
         aria-labelledby="memoryTitle"
     >
+
 
         <button
             class="memory-close"
@@ -2036,6 +2508,7 @@ footer {
 
 
         <div class="memory-content">
+
 
             <div
                 class="memory-number"
@@ -2064,15 +2537,22 @@ footer {
 
             </p>
 
+
         </div>
 
     </div>
 
 </div>
 
+
+<!-- ======================================================
+     FINAL MESSAGE
+======================================================= -->
+
 <section class="final">
 
     <div class="final-content">
+
 
         <div class="final-small">
 
@@ -2124,7 +2604,17 @@ footer {
 
 </footer>
 
+
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+
 <script>
+
+
+/* ========================================================
+   MEMORY STORIES
+======================================================== */
 
 const memories = [
 
@@ -2210,6 +2700,11 @@ const memories = [
 
 ];
 
+
+/* ========================================================
+   ELEMENTS
+======================================================== */
+
 const carousel =
     document.getElementById(
         "carousel"
@@ -2256,6 +2751,11 @@ const closeButton =
     document.getElementById(
         "memoryClose"
     );
+
+
+/* ========================================================
+   OPEN MEMORY
+======================================================== */
 
 function openMemory(index) {
 
@@ -2334,6 +2834,11 @@ function openMemory(index) {
 
 }
 
+
+/* ========================================================
+   CLOSE MEMORY
+======================================================== */
+
 function closeMemory() {
 
     overlay.classList.remove(
@@ -2358,8 +2863,12 @@ function closeMemory() {
     carousel.classList.remove(
         "paused"
     );
-
 }
+
+
+/* ========================================================
+   PHOTO CLICK + KEYBOARD
+======================================================== */
 
 photos.forEach(
     function(photo) {
@@ -2409,10 +2918,20 @@ photos.forEach(
     }
 );
 
+
+/* ========================================================
+   CLOSE BUTTON
+======================================================== */
+
 closeButton.addEventListener(
     "click",
     closeMemory
 );
+
+
+/* ========================================================
+   CLICK OUTSIDE POPUP
+======================================================== */
 
 overlay.addEventListener(
     "click",
@@ -2430,6 +2949,11 @@ overlay.addEventListener(
 
     }
 );
+
+
+/* ========================================================
+   ESCAPE KEY
+======================================================== */
 
 document.addEventListener(
     "keydown",
@@ -2451,6 +2975,11 @@ document.addEventListener(
 
     }
 );
+
+
+/* ========================================================
+   FLOATING HEARTS
+======================================================== */
 
 const heartContainer =
     document.getElementById(
@@ -2550,7 +3079,7 @@ function createHeart() {
 }
 
 
-/* Immediate hearts */
+/* Start with some hearts */
 
 for (
     let i = 0;
@@ -2566,12 +3095,17 @@ for (
 }
 
 
-/* Continuous hearts */
+/* Keep creating hearts */
 
 setInterval(
     createHeart,
     1100
 );
+
+
+/* ========================================================
+   HERO MOUSE EFFECT
+======================================================== */
 
 const heroContent =
     document.getElementById(
@@ -2609,6 +3143,11 @@ document.addEventListener(
 
     }
 );
+
+
+/* ========================================================
+   TOUCH SUPPORT
+======================================================== */
 
 carousel.addEventListener(
     "touchstart",
@@ -2652,6 +3191,195 @@ carousel.addEventListener(
     },
     {
         passive: true
+    }
+);
+
+
+/* ========================================================
+   MUSIC PLAYER
+======================================================== */
+
+const music =
+    document.getElementById(
+        "loveMusic"
+    );
+
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+let fadeTimer =
+    null;
+
+
+/* ========================================================
+   FADE MUSIC IN
+======================================================== */
+
+function fadeInMusic() {
+
+    clearInterval(
+        fadeTimer
+    );
+
+
+    music.volume =
+        0;
+
+
+    music.play()
+        .then(
+            function() {
+
+                musicButton.textContent =
+                    "⏸ Pause our song";
+
+
+                musicButton.classList.add(
+                    "playing"
+                );
+
+
+                let volume =
+                    0;
+
+
+                fadeTimer =
+                    setInterval(
+                        function() {
+
+                            volume +=
+                                .025;
+
+
+                            if (
+                                volume >=
+                                .55
+                            ) {
+
+                                volume =
+                                    .55;
+
+
+                                clearInterval(
+                                    fadeTimer
+                                );
+
+                            }
+
+
+                            music.volume =
+                                volume;
+
+                        },
+                        100
+                    );
+
+            }
+        )
+        .catch(
+            function(error) {
+
+                console.log(
+                    "Music playback failed:",
+                    error
+                );
+
+            }
+        );
+}
+
+
+/* ========================================================
+   FADE MUSIC OUT
+======================================================== */
+
+function fadeOutMusic() {
+
+    clearInterval(
+        fadeTimer
+    );
+
+
+    let volume =
+        music.volume;
+
+
+    fadeTimer =
+        setInterval(
+            function() {
+
+                volume -=
+                    .04;
+
+
+                if (
+                    volume <= 0
+                ) {
+
+                    volume =
+                        0;
+
+
+                    music.volume =
+                        0;
+
+
+                    music.pause();
+
+
+                    clearInterval(
+                        fadeTimer
+                    );
+
+
+                    musicButton.textContent =
+                        "🎵 Play our song";
+
+
+                    musicButton.classList.remove(
+                        "playing"
+                    );
+
+                }
+                else {
+
+                    music.volume =
+                        volume;
+
+                }
+
+            },
+            80
+        );
+}
+
+
+/* ========================================================
+   MUSIC BUTTON
+======================================================== */
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+
+        if (
+            music.paused
+        ) {
+
+            fadeInMusic();
+
+        }
+        else {
+
+            fadeOutMusic();
+
+        }
+
     }
 );
 
